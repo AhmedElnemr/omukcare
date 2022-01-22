@@ -1,0 +1,57 @@
+branchs
+
+
+php artisan make:migration create_branchs_table --create=branchs
+
+
+php artisan make:migration create_team_work_table --create=team_work
+
+
+
+php artisan make:migration create_site_texts_table --create=site_texts
+
+
+php artisan make:migration create_news_table --create=news
+
+
+
+php artisan make:migration create_contact_table --create=contacts
+
+
+php artisan make:migration create_slider_table --create=slider
+
+php artisan make:migration create_news_images_table --create=news_images
+php artisan make:migration create_branches_images_table --create=branches_images
+
+
+$table->string('world_key');
+$table->text('value')->nullable()->default(null);
+$table->tinyInteger('available')->default(1);
+
+
+
+
+php artisan migrate:fresh
+
+
+$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+
+
+
+
+    $table->bigIncrements('id');
+            $table->bigIncrements('main_id');
+            $table->string('name');
+            $table->string('table');
+
+
+
+
+
+
+
+
+
+
+

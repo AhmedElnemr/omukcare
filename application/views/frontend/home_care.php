@@ -1,75 +1,91 @@
-
-<section class="services">
-
-    <div class="container">
+<!-- ========================
+   Our Services
+=========================== -->
+<section class="services-area bg pt-100 pb-70">
+	<div class="container">
 		<?php if (isset($banner["text"]) && !empty($banner["text"])): ?>
-        <div class="title">
-				<h5><?= $banner["text"]->word->title ?></h5>
-				<p><?= $banner["text"]->word->content ?></p>
-        </div>
+			<div class="section-title">
+				<span class="top-title"><?= $banner["text"]->word->title ?></span>
+				<h2><?= $banner["text"]->word->content ?></h2>
+			</div>
+
+		<?php else: ?>
+			<div class="section-title">
+				<span class="top-title">Our Services </span>
+				<h2>Our Healthcare Service</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facilis vel consequatur tempora atque
+					blanditiis exercitationem incidunt, alias corporis quam assumenda dicta, temporibus.</p>
+			</div>
 		<?php endif ?>
-        <div class="row">
-            <?php if(isset($services) && !empty($services)):?>
-                <?php foreach ($services as $row): ?>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="box">
-                            <div class="icon">
 
-								<?php
-/*								$im =  IMAGEPATH . $row->logo ;
-								$newblue = imagecolorclosest($im, 0, 0, 255);
-								// change it to green
-								imagecolorset($im, $newblue, 0, 255, 0);
-								imagepng($im);
-								imagedestroy($im);
-								*/?>
 
-                                <img src="<?= base_url() . IMAGEPATH .$row->web_logo  ?>" class="img-responsive"
-                                     alt=""/>
-                            </div>
-                            <h4>
-                                <a main-id="<?=$row->service_id?>" onclick="getSub(this,'<?=$row->trans->title?>');"
-								   data-toggle="modal" data-target="#exampleModalCenter">
-									<?=$row->trans->title?> </a>
-                            </h4>
-                        </div>
-                    </div>
-                <?php endforeach ?>
-            <?php else: ?>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="box">
-                        <div class="icon">
-                            <img src="<?=base_url().WEBASSETS?>images/icon/eldery-care.png" class="img-responsive" alt=""/>
-                        </div>
-                        <h4><a href="#"> Elderly Care </a></h4>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="box">
-                        <div class="icon">
-                            <img src="<?=base_url().WEBASSETS?>images/icon/181451-200.png" class="img-responsive" alt=""/>
-                        </div>
-                        <h4><a href="#"> Special Need Care </a></h4>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="box">
-                        <div class="icon">
-                            <img src="<?=base_url().WEBASSETS?>images/icon/children-care.png" class="img-responsive" alt=""/>
-                        </div>
-                        <h4><a href="#"> Children Care </a></h4>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="box">
-                        <div class="icon">
-                            <img src="<?=base_url().WEBASSETS?>images/icon/physicans.png" class="img-responsive" alt=""/>
-                        </div>
-                        <h4><a href="#"> Physicians </a></h4>
-                    </div>
-                </div>
-            <?php endif ?>
-        </div>
-    </div>
+		<div class="row">
+			<?php if(isset($services) && !empty($services)):?>
+			<?php foreach ($services as $row): ?>
+					<div class="col-lg-3 col-sm-6 col-xs-12">
+						<div class="single-services">
+							<span class="flaticon-man">
+								<img src="<?= base_url() . IMAGEPATH .$row->web_logo  ?>"/>
+							</span>
+							<h3><a href="<?=base_url().'services-detail/'.$row->service_id?>"><?=$row->trans->title?></a></h3>
+							<p><?=$row->trans->content?></p>
+							<div class="services-shape">
+								<img src="<?=base_url().WEBASSETS?>images/services/services-card-shape.png" alt="Image">
+							</div>
+						</div>
+					</div>
+				<?php endforeach ?>
+			<?php else: ?>
+			<div class="col-lg-3 col-sm-6 col-xs-12">
+				<div class="single-services">
+        <span class="flaticon-man">
+            <img src="images/services/one.png"/>
+        </span>
+					<h3><a href="services-detail.html">Nursing Care</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+					<div class="services-shape">
+						<img src="images/services/services-card-shape.png" alt="Image">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 col-xs-12">
+				<div class="single-services">
+        <span class="flaticon-liver">
+            <img src="images/services/two.png"/>
+        </span>
+					<h3><a href="services-detail.html">Elderly Care</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+					<div class="services-shape">
+						<img src="images/services/services-card-shape.png" alt="Image">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 col-xs-12">
+				<div class="single-services">
+        <span class="flaticon-kidney">
+            <img src="images/services/three.png"/>
+        </span>
+					<h3><a href="services-detail.html">Special Need Care</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+					<div class="services-shape">
+						<img src="images/services/services-card-shape.png" alt="Image">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 col-xs-12">
+				<div class="single-services">
+        <span class="flaticon-heart">
+            <img src="images/services/four.png"/>
+        </span>
+					<h3><a href="services-detail.html">Physiotherapy</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+					<div class="services-shape">
+						<img src="images/services/services-card-shape.png" alt="Image">
+					</div>
+				</div>
+			</div>
+			<?php endif ?>
+		</div>
+	</div>
 </section>
-
+<!-- /.Services -->

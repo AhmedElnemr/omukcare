@@ -9,6 +9,9 @@ class DayStarMarket extends CI_Controller
 		//--------------------------------------------------------
 		$this->load->model('system_management/Setting_model');
 		$this->setting = $this->Setting_model->getSettings();
+
+		$this->load->model('market/Departments_model');
+		$this->departments = $this->Departments_model->get_many_by(["level"=>2]);
 		//--------------------------------------------------------
 		$lang = $this->uri->segment(1);
 		if (in_array($lang, array("ar", "en", "es"))) {

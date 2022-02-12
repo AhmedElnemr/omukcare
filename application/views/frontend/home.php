@@ -1,384 +1,365 @@
-<section>
-    <div class="swiper-container hero-slider">
-        <div class="swiper-wrapper">
-            <?php if (isset($slider) && !empty($slider)): ?>
-                <?php foreach ($slider as $row): ?>
-                    <div class="swiper-slide hero-content-wrap"
-                         style="background-image: url('<?= base_url() . IMAGEPATH .$row->image ?>')">
-                        <div class="hero-content-overlay position-absolute w-100 h-100">
-                            <div class="container h-100">
-                                <div class="row h-100">
-                                    <div class="col-12 col-lg-6 slider-swip d-flex flex-column justify-content-center align-items-start">
-                                        <header class="entry-header">
-                                            <h1><?=$row->word->title?></h1>
-                                        </header>
 
-                                        <div class="entry-content mt-4">
-                                            <p style="width: 60%"><?=$row->word->content?></p>
-                                        </div>
-                                        <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                                            <a href="<?=base_url().$row->link?>" class="button gradient-bg"><?=lang("read_more")?></a>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach ?>
-            <?php else: ?>
-                <div class="swiper-slide hero-content-wrap"
-                     style="background-image: url('<?= base_url() . WEBASSETS ?>images/banner/special.png')">
-                    <div class="hero-content-overlay position-absolute w-100 h-100">
-                        <div class="container h-100">
-                            <div class="row h-100">
-                                <div class="col-12 col-lg-6 slider-swip d-flex flex-column justify-content-center align-items-start">
-                                    <header class="entry-header">
-                                        <h1>Special Need Care</h1>
-                                    </header>
+<!-- ============================
+	Slider
+============================== -->
+<section class="banner slider" id="banner-slider">
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<?php if (isset($slider) && !empty($slider)): ?>
+			<?php foreach ($slider as $key=>$row): ?>
+					<li data-target="#carouselExampleIndicators" data-slide-to="<?=$key?>>" class="<?=($key==0)?"active":""?>"></li>
+				<?php endforeach ?>
+			<?php else: ?>
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<?php endif ?>
+		</ol>
+		<div class="carousel-inner">
+			<?php if (isset($slider) && !empty($slider)): ?>
+			<?php foreach ($slider as $key=>$row): ?>
+					<div class="carousel-item <?=($key==0)?"active":""?>">
+						<div class="banner-img" style="background-image: url('<?= base_url() . IMAGEPATH .$row->image ?>');">
+							<div class="container">
+								<div class="row align-items-center">
+									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+										<div class="slide__content">
+											<h2 class="slide__title"><?=$row->word->title?></h2>
+											<p class="slide__desc"><?=$row->word->content?></p>
+											<ul class="features-list list-unstyled mb-0 d-flex flex-wrap">
+												<!-- feature item #1 -->
+												<li class="feature-item">
+													<div class="feature__icon">
+														<i class="icon-doctor"></i>
+													</div>
+													<h2 class="feature__title">Nursing Care</h2>
+												</li><!-- /.feature-item -->
+												<!-- feature item #2 -->
+												<li class="feature-item">
+													<div class="feature__icon">
+														<i class="icon-medicine"></i>
+													</div>
+													<h2 class="feature__title">Elderly Care </h2>
+												</li><!-- /.feature-item -->
+												<!-- feature item #3 -->
+												<li class="feature-item">
+													<div class="feature__icon">
+														<i class="icon-heart2"></i>
+													</div>
+													<h2 class="feature__title">Physiotherapy</h2>
+												</li><!-- /.feature-item -->
+												<!-- feature item #4 -->
+												<li class="feature-item">
+													<div class="feature__icon">
+														<i class="icon-blood-test"></i>
+													</div>
+													<h2 class="feature__title">Special Need Care</h2>
+												</li><!-- /.feature-item  -->
+											</ul><!-- /.features-list   -->
+										</div><!-- /.slide-content -->
+									</div><!-- /.col-xl-7 -->
+								</div><!-- /.row -->
+							</div><!-- /.container -->
+						</div><!-- /.banner-img -->
+					</div>
+				<?php endforeach ?>
+			<?php else: ?>
+				<div class="carousel-item active">
+					<div class="banner-img" style="background-image: url(./images/sliders/1.jpg);">
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+									<div class="slide__content">
+										<h2 class="slide__title">Providing Best Medical Care</h2>
+										<p class="slide__desc">The health and well-being of our patients and their health care team will
+											always be our priority, so we follow the best practices for cleanliness.</p>
+										<ul class="features-list list-unstyled mb-0 d-flex flex-wrap">
+											<!-- feature item #1 -->
+											<li class="feature-item">
+												<div class="feature__icon">
+													<i class="icon-doctor"></i>
+												</div>
+												<h2 class="feature__title">Nursing Care</h2>
+											</li><!-- /.feature-item -->
+											<!-- feature item #2 -->
+											<li class="feature-item">
+												<div class="feature__icon">
+													<i class="icon-medicine"></i>
+												</div>
+												<h2 class="feature__title">Elderly Care </h2>
+											</li><!-- /.feature-item -->
+											<!-- feature item #3 -->
+											<li class="feature-item">
+												<div class="feature__icon">
+													<i class="icon-heart2"></i>
+												</div>
+												<h2 class="feature__title">Physiotherapy</h2>
+											</li><!-- /.feature-item -->
+											<!-- feature item #4 -->
+											<li class="feature-item">
+												<div class="feature__icon">
+													<i class="icon-blood-test"></i>
+												</div>
+												<h2 class="feature__title">Special Need Care</h2>
+											</li><!-- /.feature-item  -->
+										</ul><!-- /.features-list   -->
 
-                                    <div class="entry-content mt-4">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada
-                                            lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula
-                                            sapien. Suspendisse cursus faucibus finibus.</p>
-                                    </div>
-                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                                        <a href="#" class="button gradient-bg">Read More</a>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide hero-content-wrap"
-                     style="background-image: url('<?= base_url() . WEBASSETS ?>images/banner/hero.png')">
-                    <div class="hero-content-overlay position-absolute w-100 h-100">
-                        <div class="container h-100">
-                            <div class="row h-100">
-                                <div class="col-12 col-lg-6 d-flex slider-swip flex-column justify-content-center align-items-start">
-                                    <header class="entry-header">
-                                        <h1>Eldery Care</h1>
-                                    </header>
-
-                                    <div class="entry-content mt-4">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada
-                                            lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula
-                                            sapien. Suspendisse cursus faucibus finibus.</p>
-                                    </div>
-
-                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                                        <a href="#" class="button gradient-bg">Read More</a>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide hero-content-wrap"
-                     style="background-image: url('<?= base_url() . WEBASSETS ?>images/banner/physio.png')">
-                    <div class="hero-content-overlay position-absolute w-100 h-100">
-                        <div class="container h-100">
-                            <div class="row h-100">
-                                <div class="col-12 col-lg-6 d-flex slider-swip flex-column justify-content-center align-items-start">
-                                    <header class="entry-header">
-                                        <h1>Physiotherapy Care</h1>
-                                    </header>
-
-                                    <div class="entry-content mt-4">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada
-                                            lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula
-                                            sapien. Suspendisse cursus faucibus finibus.</p>
-                                    </div>
-
-                                    <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                                        <a href="#" class="button gradient-bg">Read More</a>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endif ?>
-        </div>
-
-        <div class="pagination-wrap position-absolute w-100">
-            <div class="swiper-pagination d-flex flex-row flex-md-column"></div>
-        </div>
-    </div>
+									</div><!-- /.slide-content -->
+								</div><!-- /.col-xl-7 -->
+							</div><!-- /.row -->
+						</div><!-- /.container -->
+					</div><!-- /.banner-img -->
+				</div>
+				<div class="carousel-item">
+					<div class="banner-img" style="background-image: url(./images/sliders/2.jpg);">
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+									<div class="slide__content">
+										<h2 class="slide__title">All Aspects Of Medical Practice</h2>
+										<p class="slide__desc">The health and well-being of our patients and their health care team will
+											always be our priority, so we follow the best practices for cleanliness.</p>
+										<ul class="features-list list-unstyled mb-0 d-flex flex-wrap">
+											<!-- feature item #1 -->
+											<li class="feature-item">
+												<div class="feature__icon">
+													<i class="icon-doctor"></i>
+												</div>
+												<h2 class="feature__title">Nursing Care</h2>
+											</li><!-- /.feature-item -->
+											<!-- feature item #2 -->
+											<li class="feature-item">
+												<div class="feature__icon">
+													<i class="icon-medicine"></i>
+												</div>
+												<h2 class="feature__title">Elderly Care </h2>
+											</li><!-- /.feature-item -->
+											<!-- feature item #3 -->
+											<li class="feature-item">
+												<div class="feature__icon">
+													<i class="icon-heart2"></i>
+												</div>
+												<h2 class="feature__title">Physiotherapy</h2>
+											</li><!-- /.feature-item -->
+											<!-- feature item #4 -->
+											<li class="feature-item">
+												<div class="feature__icon">
+													<i class="icon-blood-test"></i>
+												</div>
+												<h2 class="feature__title">Special Need Care</h2>
+											</li><!-- /.feature-item  -->
+										</ul><!-- /.features-list   -->
+									</div><!-- /.slide-content -->
+								</div><!-- /.col-xl-7 -->
+							</div><!-- /.row -->
+						</div><!-- /.container -->
+					</div><!-- /.banner-img -->
+				</div>
+			<?php endif ?>
+		</div>
+	</div>
 </section>
-
-<div class="homepage-boxes">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-12 col-md-12 col-lg-8 mt-5 mt-lg-0">
-                <div class="appointment-box">
-                    <h2 class="d-flex align-items-center"><?=lang("about_us")?></h2>
-                    <?php if (isset($this->setting) && !empty($this->setting)): ?>
-                      <p>
-                          <?php
-                            if($this->webLang == "ar"){
-                                echo (isset($this->setting->ar_about))? word_limiter($this->setting->ar_about,125):"";
-                            }
-                            elseif($this->webLang == "en"){
-                                echo (isset($this->setting->en_about))? word_limiter($this->setting->en_about,125):"";
-                            }
-                            elseif($this->webLang == "es"){
-                                echo (isset($this->setting->es_about))? word_limiter($this->setting->es_about,125):"";
-                            }
-                          ?>
-                      </p>
-                    <?php else: ?>
-                        <p>Based on more than 20 years of experience in the field of medical devices in Middle East
-                            North Africa region.
-                            The idea comes then to establish DAYSTAR MEDICAL TECHNOLOGY SL based in Madrid Spain with an
-                            objective to connect European manufacturers of medical devices and health products with
-                            distributors in MENA region
-                        </p>
-                        <p>The normal expansion was to establish DAYSTAR MEDICAL TECHNOLOGY FZE based in Ajman United
-                            Arab Emirates to support the same objective of connecting international manufacturers with
-                            local distributors in MENA region</p>
-                    <?php endif ?>
-                    <div class="read">
-                        <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                            <a href="<?=base_url()."about"?>" class="button gradient-bg"><?=lang("read_more")?></a>
-                        </footer>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-    </div>
-</div>
-
-
-<!--
-<div class="our-departments">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="our-departments-wrap">
-                    <h2><?/*=lang('Our_Departments')*/?></h2>
-
-                    <div class="row">
-                        <?php /*if (isset($services) && !empty($services)): */?>
-                            <?php /*foreach ($services as $row): */?>
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="our-departments-cont">
-                                        <header class="entry-header">
-                                            <?php /*if (is_file(IMAGEPATH . $row->logo)): */?>
-                                                <img src="<?/*= base_url() . IMAGEPATH . $row->logo */?>" alt="">
-                                            <?php /*else: */?>
-                                                <img src="<?/*= base_url() . WEBASSETS */?>images/depts/Nursing-care.png"
-                                                     alt="">
-                                            <?php /*endif */?>
-                                            <h3><?/*=$row->trans->title*/?></h3>
-                                        </header>
-                                        <div class="entry-content">
-                                            <p><?/*=word_limiter($row->trans->content,45)*/?></p>
-                                        </div>
-                                        <footer class="entry-footer">
-                                            <a data-toggle="modal" data-target="#exampleModalCenter"
-											   main-id="<?/*=$row->service_id*/?>" onclick="getSub(this,'<?/*=$row->trans->title*/?>');">
-												<?/*=lang('read_more')*/?></a>
-                                        </footer>
-                                    </div>
-                                </div>
-                            <?php /*endforeach */?>
-                        <?php /*else: */?>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="our-departments-cont">
-                                    <header class="entry-header">
-                                        <img src="<?/*= base_url() . WEBASSETS */?>images/depts/Nursing-care.png" alt="">
-
-                                        <h3>Nursing Care</h3>
-                                    </header>
-                                    <div class="entry-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada
-                                            lorem maximus mauris.</p>
-                                    </div>
-
-                                    <footer class="entry-footer">
-                                        <a href="#">read more</a>
-                                    </footer>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="our-departments-cont">
-                                    <header class="entry-header">
-                                        <img src="<?/*= base_url() . WEBASSETS */?>images/depts/eldery-care.png" alt="">
-
-                                        <h3>Eldery Care</h3>
-                                    </header>
-
-                                    <div class="entry-content">
-                                        <p>Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut
-                                            ac ligula sapien.</p>
-                                    </div>
-
-                                    <footer class="entry-footer">
-                                        <a href="#">read more</a>
-                                    </footer>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="our-departments-cont">
-                                    <header class="entry-header">
-                                        <img src="<?/*= base_url() . WEBASSETS */?>images/depts/181451-200.png" alt="">
-
-                                        <h3>Special Need Care</h3>
-                                    </header>
-
-                                    <div class="entry-content">
-                                        <p>Lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula
-                                            sapien. Suspendisse cursus.</p>
-                                    </div>
-
-                                    <footer class="entry-footer">
-                                        <a href="#">read more</a>
-                                    </footer>
-                                </div>
-                            </div>
-                        <?php /*endif */?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
--->
-<section class="testimonial-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2><?=lang("WHY_CHOOSE_US")?></h2>
-            </div>
-        </div>
-    </div>
-
-    <!-- Swiper -->
-    <div class="testimonial-slider">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-12 col-lg-8">
-                    <div class="testimonial-bg-shape">
-                        <div class="owl-carousel owl-theme testimonial-slider-wrap">
-                            <?php if (isset($this->setting) && !empty($this->setting)): ?>
-
-                                <div class="item">
-                                    <div class="swiper-slide">
-                                        <div class="entry-content">
-                                            <h3><?=lang('Our_Mission')?></h3>
-                                            <p>
-                                                <?php
-                                                if($this->webLang == "ar"){
-                                                    echo (isset($this->setting->ar_Our_Mission))? word_limiter($this->setting->ar_Our_Mission,100):"";
-                                                }
-                                                elseif($this->webLang == "en"){
-                                                    echo (isset($this->setting->en_Our_Mission))? word_limiter($this->setting->en_Our_Mission,100):"";
-                                                }
-                                                elseif($this->webLang == "es"){
-                                                    echo (isset($this->setting->es_Our_Mission))? word_limiter($this->setting->es_Our_Mission,100):"";
-                                                }
-                                                ?>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="swiper-slide">
-                                        <div class="entry-content">
-                                            <h3><?=lang('our_vision')?></h3>
-                                            <p>
-                                                <?php
-                                                if($this->webLang == "ar"){
-                                                    echo (isset($this->setting->ar_Our_Vision))? word_limiter($this->setting->ar_Our_Vision,100):"";
-                                                }
-                                                elseif($this->webLang == "en"){
-                                                    echo (isset($this->setting->en_Our_Vision))? word_limiter($this->setting->en_Our_Vision,100):"";
-                                                }
-                                                elseif($this->webLang == "es"){
-                                                    echo (isset($this->setting->es_Our_Vision))? word_limiter($this->setting->es_Our_Vision,100):"";
-                                                }
-                                                ?>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-								<div class="item">
-									<div class="swiper-slide">
-										<div class="entry-content">
-											<h3><?=lang('Our_Values')?></h3>
-											<p>
-												<?php
-												if($this->webLang == "ar"){
-													echo (isset($this->setting->ar_Our_Values))? word_limiter($this->setting->ar_Our_Values,100):"";
-												}
-												elseif($this->webLang == "en"){
-													echo (isset($this->setting->en_Our_Values))? word_limiter($this->setting->en_Our_Values,100):"";
-												}
-												elseif($this->webLang == "es"){
-													echo (isset($this->setting->es_Our_Values))? word_limiter($this->setting->es_Our_Values,100):"";
-												}
-												?>
-											</p>
-										</div>
-									</div>
-								</div>
-                            <?php else: ?>
-                                <div class="item">
-                                    <div class="swiper-slide">
-                                        <div class="entry-content">
-                                            <h3>Our Values</h3>
-                                            <p>
-                                                1- Passion:
-                                                To make difference in health care and medical technology field in Middle
-                                                East and Africa region<br/>
-                                                2- Commitment:
-                                                Clear and consistent way of work with our end users and partners<br/>
-                                                3- Quality of Services:
-                                                Applying the gold standard in connecting our end users and distributors
-                                                with service providers and manufacturers<br/>
-                                                4- Humanity and Trust:
-                                                Building up a long term trustful partnership based on humanity and
-                                                ethics with our end users and partners
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="swiper-slide">
-                                        <div class="entry-content">
-                                            <h3>Our Mission</h3>
-                                            <p>Delivering High quality services to our end users making sure of the
-                                                availability of up to date medical devices innovations in the region of
-                                                Middle East and Africa .</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="swiper-slide">
-                                        <div class="entry-content">
-                                            <h3>Our Vision</h3>
-                                            <p>Building up a leading Medical Technology Company to support a
-                                                well-structured end users and service providers network in addition to
-                                                manufacturer and distributor network in the region of Middle East and
-                                                Africa.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endif ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2"></div>
-            </div>
-        </div>
-    </div>
+<!-- /.Slider -->
+<!-- ============================
+	 .About Layout 1
+ ============================== -->
+<section class="about-layout1 pb-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-6">
+				<div class="heading-layout2">
+					<h3 class="heading__title mb-40">Improving The Quality Of Your Life Through Better Health.</h3>
+				</div><!-- /heading -->
+			</div><!-- /.col-12 -->
+		</div><!-- /.row -->
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-6">
+				<div class="about__Text">
+					<p class="mb-30">
+						<?php if (isset($this->setting) && !empty($this->setting)): ?>
+						<?php
+						if($this->webLang == "ar"){
+							echo (isset($this->setting->ar_about))? word_limiter($this->setting->ar_about,125):"";
+						}
+						elseif($this->webLang == "en"){
+							echo (isset($this->setting->en_about))? word_limiter($this->setting->en_about,125):"";
+						}
+						elseif($this->webLang == "es"){
+							echo (isset($this->setting->es_about))? word_limiter($this->setting->es_about,125):"";
+						}
+						?>
+						<?php else: ?>
+						Our goal is to deliver quality of care in a courteous, respectful, and compassionate
+						manner. We hope you will allow us to care for you and to be the first and best choice for healthcare.
+						We will work with you to develop individualised care plans, including management of
+						chronic diseases. We are committed to being the region’s premier healthcare network providing patient
+						centered care that inspires clinical and service excellence.
+						<?php endif ?>
+					</p>
+					<div class="d-flex align-items-center mb-30">
+						<a href="<?=base_url()."about"?>" class="btn btn__primary btn__outlined btn__rounded mr-30">
+							<?=lang("read_more")?></a>
+					</div>
+				</div>
+			</div><!-- /.col-lg-6 -->
+			<div class="col-sm-12 col-md-12 col-lg-6">
+				<div class="video-banner">
+					<img src="<?=base_url().WEBASSETS?>images/about/2.jpg" alt="about">
+				</div><!-- /.video-banner -->
+			</div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
 </section>
+<!-- ======================
+ Work Process
+========================= -->
+<section class="work-process work-process-carousel pt-130 pb-0 bg-overlay bg-overlay-secondary">
+	<div class="bg-img">
+		<img src="<?=base_url().WEBASSETS?>images/banners/1.jpg" alt="background">
+	</div>
+	<div class="container">
+		<div class="row heading-layout2">
+			<div class="col-12">
+				<h2 class="heading__subtitle color-primary">Caring For The Health Of You And Your Family.</h2>
+			</div><!-- /.col-12 -->
+			<div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
+				<h3 class="heading__title color-white">We Provide All Aspects Of Medical Practice For Your Whole Family!
+				</h3>
+			</div><!-- /.col-xl-5 -->
+			<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 offset-xl-1">
+				<p class="heading__desc font-weight-bold color-gray mb-40">We will work with you to develop individualised
+					care
+					plans, including
+					management of chronic diseases. If we cannot assist, we can provide referrals or advice about the type of
+					practitioner you require. We treat all enquiries sensitively and in the strictest confidence.
+				</p>
+				<ul class="list-items list-items-layout2 list-items-light list-horizontal list-unstyled">
+					<li>Fractures and dislocations</li>
+					<li>Health Assessments</li>
+					<li>Desensitisation injections</li>
+					<li>High Quality Care</li>
+					<li>Desensitisation injections</li>
+				</ul>
+			</div><!-- /.col-xl-6 -->
+		</div><!-- /.row -->
+		<div class="row">
+			<div class="col-12">
+				<div class="carousel-container mt-90">
+					<div class="slick-carousel"
+						 data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "infinite":false,
+                 "arrows": false, "dots": false}'>
+						<!-- process item #1 -->
+						<div class="process-item">
+							<span class="process__number">01</span>
+							<div class="process__icon">
+								<i class="fas fa-rocket"></i>
+							</div><!-- /.process__icon -->
+							<h4 class="process__title"><?=lang('Our_Mission')?></h4>
+							<p class="process__desc">
+								<?php if (isset($this->setting) && !empty($this->setting)): ?>
+								<?php
+								if($this->webLang == "ar"){
+									echo (isset($this->setting->ar_Our_Mission))? word_limiter($this->setting->ar_Our_Mission,100):"";
+								}
+								elseif($this->webLang == "en"){
+									echo (isset($this->setting->en_Our_Mission))? word_limiter($this->setting->en_Our_Mission,100):"";
+								}
+								?>
+								<?php else: ?>
+								Delivering High quality services to our end users making sure of the availability of up to date medical devices innovations in the region of Middle East and Africa
+								<?php endif ?>
+							</p>
+						</div><!-- /.process-item -->
+						<!-- process-item #2 -->
+						<div class="process-item">
+							<span class="process__number">02</span>
+							<div class="process__icon">
+								<i class="fas fa-eye"></i>
+							</div><!-- /.process__icon -->
+							<h4 class="process__title"><?=lang('our_vision')?></h4>
+							<p class="process__desc">
+								<?php if (isset($this->setting) && !empty($this->setting)): ?>
+								<?php
+								if($this->webLang == "ar"){
+									echo (isset($this->setting->ar_Our_Vision))? word_limiter($this->setting->ar_Our_Vision,100):"";
+								}
+								elseif($this->webLang == "en"){
+									echo (isset($this->setting->en_Our_Vision))? word_limiter($this->setting->en_Our_Vision,100):"";
+								}
+								elseif($this->webLang == "es"){
+									echo (isset($this->setting->es_Our_Vision))? word_limiter($this->setting->es_Our_Vision,100):"";
+								}
+								?>
+								<?php else: ?>
+									Building up a leading Medical Technology Company to support a well-structured end users and
+									service providers network in addition to manufacturer and distributor network in the region
+									of Middle East and Africa
+								<?php endif ?>
+							</p>
+						</div><!-- /.process-item -->
+						<!-- process-item #3 -->
+						<div class="process-item">
+							<span class="process__number">03</span>
+							<div class="process__icon">
+								<i class="far fa-gem"></i>
+							</div><!-- /.process__icon -->
+							<h4 class="process__title"><?=lang('Our_Values')?></h4>
+							<p class="process__desc">
+								<?php if (isset($this->setting) && !empty($this->setting)): ?>
+									<?php
+									if($this->webLang == "ar"){
+										echo (isset($this->setting->ar_Our_Values))? word_limiter($this->setting->ar_Our_Values,100):"";
+									}
+									elseif($this->webLang == "en"){
+										echo (isset($this->setting->en_Our_Values))? word_limiter($this->setting->en_Our_Values,100):"";
+									}
+									?>
+								<?php else: ?>
+									Building up a leading Medical Technology Company to support a well-structured end users and
+									service providers network in addition to manufacturer and distributor network in the region
+									of Middle East and Africa
+								<?php endif ?>
+							</p>
+						</div><!-- /.process-item -->
 
+					</div><!-- /.carousel -->
+				</div>
+			</div><!-- /.col-12 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+	<div class="cta bg-light-blue">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-sm-12 col-md-1 col-lg-1">
+				</div><!-- /.col-lg-2 -->
+				<div class="col-sm-12 col-md-10 col-lg-10">
+					<h4 class="cta__title"><?=lang('download')?>  <?=lang("home_care")?> </h4>
+					<p class="cta__desc">
+						<?=lang('download_app_text')?>
+					</p>
+					<div class="btn-downloads">
+						<a target="_blank" href="<?=(isset($this->setting->App_Store))? $this->setting->App_Store :"#";?>">
+							<button class="download-btn">
+								<i class="fab fa-apple"></i>
+								<span>
+                            Available on <span class="large-text">App Store</span>
+                        </span>
+							</button>
+						</a>
+						<a target="_blank" href="<?=(isset($this->setting->Play_Store))? $this->setting->Play_Store :"#";?>">
+							<button class="download-btn">
+								<i class="fab fa-google-play"></i>
+								<span>
+                          Available on <span class="large-text">Play Store</span>
+                      </span>
+							</button>
+						</a>
+					</div>
+				</div><!-- /.col-lg-7 -->
+				<div class="col-sm-12 col-md-1 col-lg-1">
 
+				</div><!-- /.col-lg-3 -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</div><!-- /.cta -->
+</section>
+<!-- /.Work Process -->

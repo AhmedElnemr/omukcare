@@ -1,332 +1,144 @@
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title> <?= lang('web_name') ?> </title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="apple-touch-icon" href="apple-touch-icon.png">
-	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/font-awesome.min.css"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/owl.carousel.min.css" rel="stylesheet"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/owl.theme.default.min.css" rel="stylesheet"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/bootstrap-select.min.css" rel="stylesheet"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/nice-select.css" rel="stylesheet"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/animate.min.css" rel="stylesheet"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/hover-min.css" rel="stylesheet"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/main-menu.css" rel="stylesheet"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/swiper.min.css" rel="stylesheet"/>
-	<link href="<?= base_url() . ASS ?>date-picker/jquery.datetimepicker.css" rel="stylesheet"/>
-	<link href="<?= base_url() . ASS ?>sweetalert/sweetalert.css" rel="stylesheet"/>
-	<link href="<?= base_url() . WEBASSETS ?>css/fancybox/jquery.fancybox.css" rel="stylesheet"/>
-	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/cd-gallry.css"/>
-	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/style.css?v=<?= time() ?>"/>
-	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/responsive.css?v=<?= time() ?>"/>
-	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/second-style.css?v=<?= time() ?>"/>
-
-
-	<?php if ($this->webLang == "ar"): ?>
-		<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/bootstrap-rtl.css?v=<?= time() ?>"/>
-	<?php endif ?>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="Oumk Care">
+	<link href="<?= base_url() . WEBASSETS ?>images/logo/favicon.png" rel="icon">
+	<title><?= lang('web_name') ?></title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/libraries.css">
+	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/owl.carousel.min.css">
+	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/style.css">
 </head>
 
-<body class="<?= (isset($page_name) && $page_name == "home") ? "" : "single-page"; ?>">
-<header class="site-header">
-	<div id="menu-area">
-		<div class="menu-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-2 col-sm-2">
-						<div class="h-logo">
-							<a href="<?= base_url() ?>">
-								<?php
-								if (isset($page_name)) {
-									if ($page_name == "home-care") {
-										$image = base_url();
-										$image .= ($this->webLang == "ar") ? LOGO_HOME_CARE_AR : LOGO_HOME_CARE_EN;
-									} elseif ($page_name == "medical-tourism") {
-										$image = base_url();
-										$image .= ($this->webLang == "ar") ? LOGO_TECNOLOGY_AR : LOGO_TECNOLOGY_EN;
-									} else {
-										$image = base_url();
-										$image .= ($this->webLang == "ar") ? LOGO_HOME_AR : LOGO_HOME_EN;
-									}
-								} else {
-									$image = base_url() . WEBASSETS . 'images/Logo/LOGO-day-star-psd.png';
-								}
-								?>
-								<img src="<?= $image ?>" alt="Logo">
-							</a>
+<body>
+<div class="wrapper">
+	<!-- /.preloader -->
+
+	<!-- =========================
+		Header
+	=========================== -->
+
+	<?php
+	$address = 'Arab Republic of Egypt First Settlement, New Cairo Six Neighborhood, Villa 381';
+	$addressOther = 'United Arab Emirates Ajman Free Zone B.C. 1301423';
+	$phone = (isset($this->setting->phones)) ? $this->setting->phones:'+971 55 455 3340';
+	$mail  = (isset($this->setting->emails)) ? $this->setting->emails:'info@daystar-mea.com';
+	if (isset($this->setting) && !empty($this->setting)):
+		if ($this->webLang == "ar") {
+			$address =  (isset($this->setting->ar_address)) ? $this->setting->ar_address: $address;
+			$addressOther = (isset($this->setting->ar_address_other))? $this->setting->ar_address_other :$addressOther;
+		}
+		elseif ($this->webLang == "en") {
+			$address =  (isset($this->setting->en_address)) ? $this->setting->en_address: $address;
+			$addressOther = (isset($this->setting->en_address_other))? $this->setting->en_address_other :$addressOther;
+		}
+	endif;
+	?>
+
+
+	<header class="header header-layout1">
+		<div class="header-topbar">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-12">
+						<div class="d-flex align-items-center justify-content-between">
+							<ul class="contact__list d-flex flex-wrap align-items-center list-unstyled mb-0">
+								<li>
+									<button class="miniPopup-emergency-trigger" type="button">24/7 Emergency</button>
+									<div id="miniPopup-emergency" class="miniPopup miniPopup-emergency text-center">
+										<div class="emergency__icon">
+											<i class="icon-call3"></i>
+										</div>
+										<a href="tel:+201061245741" class="phone__number">
+											<i class="icon-phone"></i> <span>+2 01061245741</span>
+										</a>
+										<p>Please feel free to contact our friendly reception staff with any general or medical enquiry.
+										</p>
+										<a href="appointment.html" class="btn btn__secondary btn__link btn__block">
+											<span>Make Appointment</span> <i class="icon-arrow-right"></i>
+										</a>
+									</div><!-- /.miniPopup-emergency -->
+								</li>
+								<li>
+									<i class="icon-phone"></i><a href="tel:+5565454117">Emergency Line: <?=$phone?></a>
+								</li>
+								<li>
+									<i class="icon-location"></i><a href="#"><?=$address?></a>
+								</li>
+								<li>
+									<i class="icon-clock"></i><a href="contact-us.html">Mon - Fri: 8:00 am - 7:00 pm</a>
+								</li>
+							</ul><!-- /.contact__list -->
+							<div class="d-flex">
+								<ul class="social-icons list-unstyled mb-0 mr-30">
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								</ul><!-- /.social-icons -->
+							</div>
 						</div>
+					</div><!-- /.col-12 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.header-top -->
+		<nav class="navbar navbar-expand-lg sticky-navbar">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="<?=base_url()?>">
+					<img src="<?= base_url() . WEBASSETS ?>images/logo/logo-light.png" class="logo-light" alt="logo">
+					<img src="<?= base_url() . WEBASSETS ?>images/logo/logo-dark.png" class="logo-dark" alt="logo">
+				</a>
+				<button class="navbar-toggler" type="button">
+					<span class="menu-lines"><span></span></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNavigation">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav__item has-dropdown">
+							<a href="<?= base_url() ?>" class=" nav__item-link active"><?= lang('home') ?></a>
+						</li><!-- /.nav-item -->
+						<li class="nav__item has-dropdown">
+							<a href="<?= base_url() . "about" ?>" class="nav__item-link"><?= lang('about_us') ?></a>
+						</li><!-- /.nav-item -->
+						<li class="nav__item has-dropdown">
+							<a href="<?= base_url() . "home-care" ?>"  class="nav__item-link"><?= lang("home_care") ?></a>
+						</li>
+						<li class="nav__item">
+							<a href="<?= base_url() . "contact-us" ?>" class="nav__item-link"><?= lang('contact_us') ?></a>
+						</li><!-- /.nav-item -->
+					</ul><!-- /.navbar-nav -->
+					<button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button>
+				</div><!-- /.navbar-collapse -->
+				<div class="d-none header-btns d-xl-flex align-items-center position-relative ml-30">
+					<div class="miniPopup-departments-trigger">
+						<span class="menu-lines" id="miniPopup-departments-trigger-icon"><span></span></span>
+						<a href="#!">Medical Supplies</a>
 					</div>
-					<div class="col-lg-10 col-sm-10">
-						<div class="menu-search">
-							<nav class="main-menu">
-								<ul class="list-unstyled">
-									<li class="nav-item <?= (isset($page_name) && $page_name == "home") ? "active-item" : ""; ?>">
-										<a href="<?= base_url() ?>"><?= lang('home') ?></a></li>
-									<!--<li class="nav-item <? /*=(isset($page_name) && $page_name == "about")? "active-item":"";*/ ?>">
-										<a href="<? /*= base_url() . "about" */ ?>"><? /*= lang('about_us') */ ?></a></li>-->
-									<!------------------------------------------------------->
-									<li class="nav-item <?= (isset($page_name) && $page_name == "home-care") ? "active-item" : ""; ?>">
-										<a href="<?= base_url() . "home-care" ?>">
-											<?= lang("home_care") ?></a>
-									</li>
-									<!------------------------------------------------------->
-									<li class="nav-item <?= (isset($page_name) && $page_name == "category") ? "active-item" : ""; ?>">
-										<a href="<?= base_url() . "market" ?>">
-											<?= lang("market") ?> </a>
-									</li>
-									<!------------------------------------------------------->
-									<li class="nav-item <?= (isset($page_name) && $page_name == "Trading") ? "active-item" : ""; ?>">
-										<a href="#"><?= lang('Trading') ?></a>
-										<ul class="dropdown-menus list-unstyled">
-											<li>
-												<a href="<?= base_url() . "parteners" ?>">
-													<?= lang('Parteners') ?></a>
-											</li>
-											<li>
-												<a href="<?= base_url() . "suppliers" ?>">
-													<?= lang('Suppliers') ?></a>
-											</li>
-										</ul>
-									</li>
+					<ul id="miniPopup-departments" class="miniPopup miniPopup-departments dropdown-menu">
+						<?php if(isset($this->departments) && !empty($this->departments)):?>
+							<?php foreach ($this->departments as $one): ?>
+								<li class="nav__item">
+									<a href="<?=base_url()."products/".$one->id?>" class="nav__item-link"><?=$one->word->title?></a>
+								</li>
+							<?php endforeach ?>
+						<?php endif;?>
+					</ul> <!-- /.miniPopup-departments -->
 
-									<!------------------------------------------------------->
-									<li class="nav-item <?= (isset($page_name) && $page_name == "medical-tourism") ? "active-item" : ""; ?>">
-										<a href="<?= base_url() . "medical-tourism" ?>">
-											<?= lang('medical_tourism') ?></a>
-									</li>
-									<!------------------------------------------------------->
-									<li class="nav-item <?= (isset($page_name) && $page_name == "contact-us") ? "active-item" : ""; ?>">
-										<a href="<?= base_url() . "contact-us" ?>">
-											<?= lang('contact_us') ?></a></li>
-									<!------------------------------------------------------->
-									<!------------------------------------------------------->
-									<?php
-									$get = $this->input->get();
-									if (in_array(uri_string(), ['ar', 'en', 'es'])) {
-										$path = str_replace($this->webLang, "", uri_string());
-										$path = str_replace($this->webLang, "", $path);
-										$path .= (isset($get) && !empty($get)) ? creatGetUrl($get) : "";
-									} else {
-										$path = str_replace($this->webLang . "/", "", uri_string());
-										$path = str_replace($this->webLang . "/", "", $path);
-										$path .= (isset($get) && !empty($get)) ? creatGetUrl($get) : "";
-									}
-									//=========================================================
-									if ($this->webLang == "ar") {
-										$path_1 = "#";//base_url()."ar/".$path ;
-										$path_2 = base_url() . "en/" . $path;
-										$path_3 = base_url() . "es/" . $path;
-										$title_1 = "العربية";
-										$title_2 = "الإنجليزية";
-										$title_3 = "الإسبانية";
-										$lang_image_1 = "England.png";
-										$lang_image_2 = "spain.png";
-									} elseif ($this->webLang == "es") {
-										$path_1 = "#";//base_url()."es/".$path ;
-										$path_2 = base_url() . "en/" . $path;
-										$path_3 = base_url() . "ar/" . $path;
-										$title_1 = "Español";
-										$title_2 = "Inglés";
-										$title_3 = "Arábica";
-										$lang_image_1 = "England.png";
-										$lang_image_2 = "Egypt.png";
-									} else {
-										$path_1 = "#";//base_url()."en/".$path ;
-										$path_2 = base_url() . "ar/" . $path;
-										$path_3 = base_url() . "es/" . $path;
-										$title_1 = "English";
-										$title_2 = "Arabic";
-										$title_3 = "Spanish";
-										$lang_image_1 = "Egypt.png";
-										$lang_image_2 = "spain.png";
-									}
-									?>
-									<li class="nav-item">
-										<a href="<?= $path_1 ?>"><?= $title_1 ?></a>
-										<ul class="dropdown-menus lang list-unstyled">
-											<li>
-												<img src="<?= base_url() . WEBASSETS ?>images/icon/<?= $lang_image_1 ?>"/>
-												<a href="<?= $path_2 ?>"><?= $title_2 ?></a>
-											</li>
-											<li>
-												<img src="<?= base_url() . WEBASSETS ?>images/icon/<?= $lang_image_2 ?>"/>
-												<a href="<?= $path_3 ?>"><?= $title_3 ?></a>
-											</li>
-										</ul>
-									</li>
-									<!------------------------------------------------------->
-									<?php if (isset($_SESSION["web_user"])): ?>
-										<li class="nav-item <?= (isset($page_name) && $page_name == "home-care") ? "active-item" : ""; ?>">
-											<a href="#"><?= lang('my_profile') ?></a>
-											<ul class="dropdown-menus list-unstyled">
-												<li>
-													<a href="<?= base_url() . "profile/" . $_SESSION["web_user"]->user_id ?>">
-														<?= lang('my_profile') ?></a>
-												</li>
-												<li>
-													<a href="<?= base_url() . "my-cart" ?>">
-														<?= lang('My Cart') ?></a>
-												</li>
-												<li>
-													<a href="<?= base_url() . "web-logout" ?>">
-														<?= lang('logout') ?></a>
-												</li>
-											</ul>
-										</li>
-									<?php else: ?>
-
-										<li class="nav-item <?= (isset($page_name) && $page_name == "web-login") ? "active-item" : ""; ?>">
-											<a href="<?= base_url() . "web-login" ?>">
-												<?= lang("login") ?></a>
-										</li>
-									<?php endif ?>
-									<!------------------------------------------------------->
-
-
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="mobile-nav-wrap" class="clearfix">
-			<div class="container">
-				<div class="mobile-logo">
-					<div class="h-logo"><a href="<?= base_url() ?>">
-
-							<?php
-							if (isset($page_name)) {
-								if ($page_name == "home-care") {
-									$image = base_url();
-									$image .= ($this->webLang == "ar") ? LOGO_HOME_CARE_AR : LOGO_HOME_CARE_EN;
-								} elseif ($page_name == "medical-tourism") {
-									$image = base_url();
-									$image .= ($this->webLang == "ar") ? LOGO_TECNOLOGY_AR : LOGO_TECNOLOGY_EN;
-								} else {
-									$image = base_url();
-									$image .= ($this->webLang == "ar") ? LOGO_HOME_AR : LOGO_HOME_EN;
-								}
-							} else {
-								$image = base_url() . WEBASSETS . 'images/Logo/LOGO-day-star-psd.png';
-							}
-							?>
-							<img src="<?= $image ?>" alt="Logo">
-						</a>
-					</div>
-				</div>
-				<div class="toggle-inner"></div>
-			</div>
-		</div>
-
-		<div class="mobile-menu-inner">
-			<div class="mobile-in-logo">
-				<div class="mob-inner-logo"><a href="<?= base_url() ?>">
-						<?php
-						if (isset($page_name)) {
-							if ($page_name == "home-care") {
-								$image = base_url();
-								$image .= ($this->webLang == "ar") ? LOGO_HOME_CARE_AR : LOGO_HOME_CARE_EN;
-							} elseif ($page_name == "medical-tourism") {
-								$image = base_url();
-								$image .= ($this->webLang == "ar") ? LOGO_TECNOLOGY_AR : LOGO_TECNOLOGY_EN;
-							} else {
-								$image = base_url();
-								$image .= ($this->webLang == "ar") ? LOGO_HOME_AR : LOGO_HOME_EN;
-							}
-						} else {
-							$image = base_url() . WEBASSETS . 'images/Logo/LOGO-day-star-psd.png';
-						}
-						?>
-						<img src="<?= $image ?>" alt="Logo">
-					</a>
-				</div>
-				<div class="close-menu"><i class="fas fa-times"></i></div>
-			</div>
-			<nav id="accordian">
-				<ul class="slide-menu list-unstyled">
-
-					<li class=" <?= (isset($page_name) && $page_name == "home") ? "active-item" : ""; ?>">
-						<a href="<?= base_url() ?>"><?= lang('home') ?></a></li>
-
-					<li class="<?= (isset($page_name) && $page_name == "home-care") ? "active-item" : ""; ?>">
-						<a href="<?= base_url() . "home-care" ?>"><?= lang('home_care') ?></a>
-					</li>
-
-					<li class="<?= (isset($page_name) && $page_name == "category") ? "active-item" : ""; ?>">
-						<a href="<?= base_url() . "market" ?>"><?= lang('market') ?></a>
-					</li>
-					<li>
-						<a href="#"
-						   class="dropdown-here <?= (isset($page_name) && $page_name == "Trading") ? "active-item" : ""; ?>">
-							<?= lang('Trading') ?>
-						</a>
-						<ul class="submenuItems list-unstyled">
-							<li>
-								<a href="<?= base_url() . "parteners" ?>">
-									<?= lang('Parteners') ?></a>
-							</li>
-							<li>
-								<a href="<?= base_url() . "suppliers" ?>">
-									<?= lang('Suppliers') ?></a>
-							</li>
-						</ul>
-					</li>
-					<li class="<?= (isset($page_name) && $page_name == "medical-tourism") ? "active-item" : ""; ?>">
-						<a href="<?= base_url() . "medical-tourism" ?>">
-							<?= lang('medical_tourism') ?></a>
-					</li>
-					<li class="<?= (isset($page_name) && $page_name == "contact-us") ? "active-item" : ""; ?>">
-						<a href="<?= base_url() . "contact-us" ?>">
-							<?= lang('contact_us') ?></a>
-					</li>
-					<li>
-						<a href="#" class="dropdown-here"><?= $title_1 ?></a>
-						<ul class="submenuItems list-unstyled">
-							<li>
-								<a href="<?= $path_2 ?>"><?= $title_2 ?></a>
-							</li>
-							<li>
-								<a href="<?= $path_3 ?>"><?= $title_3 ?></a>
-							</li>
-						</ul>
-					</li>
-					<!------------------------------------------------------->
 					<?php if (isset($_SESSION["web_user"])): ?>
-						<li>
-							<a href="#"><?= lang('my_profile') ?></a>
-							<ul class="submenuItems list-unstyled">
-								<li>
-									<a href="<?= base_url() . "profile/" . $_SESSION["web_user"]->user_id ?>">
-										<?= lang('my_profile') ?></a>
-								</li>
-								<li>
-									<a href="<?= base_url() . "my-cart" ?>">
-										<?= lang('My Cart') ?></a>
-								</li>
-								<li>
-									<a href="<?= base_url() . "web-logout" ?>">
-										<?= lang('logout') ?></a>
-								</li>
-							</ul>
-						</li>
+					<a href="<?= base_url() . "profile/" . $_SESSION["web_user"]->user_id ?>" class="btn btn__primary btn__rounded ml-30">
+						<i class="icon-user"></i>
+						<span><?= lang('my_profile') ?></span>
+					</a>
 					<?php else: ?>
-
-						<li>
-							<a href="<?= base_url() . "web-login" ?>">
-								<?= lang("login") ?></a>
-						</li>
+						<a href="<?= base_url() . "web-login" ?>" class="btn btn__primary btn__rounded ml-30">
+							<i class="icon-user"></i>
+							<span><?= lang("login") ?></span>
+						</a>
 					<?php endif ?>
-					<!------------------------------------------------------->
+				</div>
+			</div><!-- /.container -->
+		</nav><!-- /.navabr -->
+	</header><!-- /.Header -->
 
-				</ul>
-			</nav>
-		</div>
-
-	</div>
-</header>

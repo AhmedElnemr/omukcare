@@ -135,6 +135,13 @@ $route['ar/order-details/(:any)'] = 'Web/orderDetails/$1';
 $route['en/order-details/(:any)'] = 'Web/orderDetails/$1';
 $route['es/order-details/(:any)'] = 'Web/orderDetails/$1';
 
+
+//--------------- order-details   ---------------------------
+$route['services-detail/(:any)'] = 'Web/serviceDetails/$1';
+$route['ar/services-detail/(:any)'] = 'Web/serviceDetails/$1';
+$route['en/services-detail/(:any)'] = 'Web/serviceDetails/$1';
+$route['es/services-detail/(:any)'] = 'Web/serviceDetails/$1';
+
 //--------------- order-details   ---------------------------
 $route['buy/(:any)'] = 'Web/buy/$1';
 $route['ar/buy/(:any)'] = 'Web/buy/$1';

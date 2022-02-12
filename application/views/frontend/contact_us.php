@@ -1,108 +1,109 @@
-<div class="contact-page-short-boxes">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-4 col-md-6">
-                <div class="contact-info h-100">
-                    <h2 class="d-flex align-items-center"><?=lang('Contact_Info')?></h2>
-					<?php
-					$address = 'Arab Republic of Egypt First Settlement, New Cairo Six Neighborhood, Villa 381';
-					$addressOther = 'United Arab Emirates Ajman Free Zone B.C. 1301423';
-					$phone = (isset($this->setting->phones)) ? $this->setting->phones:'+971 55 455 3340';
-					$mail  = (isset($this->setting->emails)) ? $this->setting->emails:'info@daystar-mea.com';
-					if (isset($this->setting) && !empty($this->setting)):
-						if ($this->webLang == "ar") {
-							$address =  (isset($this->setting->ar_address)) ? $this->setting->ar_address: $address;
-							$addressOther = (isset($this->setting->ar_address_other))? $this->setting->ar_address_other :$addressOther;
-						}
-						elseif ($this->webLang == "en") {
-							$address =  (isset($this->setting->en_address)) ? $this->setting->en_address: $address;
-							$addressOther = (isset($this->setting->en_address_other))? $this->setting->en_address_other :$addressOther;
-						}
-						elseif ($this->webLang == "es") {
-							$address =  (isset($this->setting->es_address)) ? $this->setting->es_address: $address;
-							$addressOther = (isset($this->setting->es_address_other))? $this->setting->es_address_other :$addressOther;
-						}
-					endif;
-					?>
-                    <ul class="p-0 m-0">
-						<li><span><?=lang('address')?>-1:</span><?=$address?></li>
-						<li><span><?=lang('address')?>-2:</span><?=$addressOther?></li>
-						<li><span><?=lang('phone')?>:</span><?=$phone?></li>
-						<li><span><?=lang('emails')?>:</span><?=$mail?></li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="col-12 col-lg-4 col-md-6 mt-5 mt-lg-0">
-                <div class="opening-hours h-100">
-                    <h2 class="d-flex align-items-center"><?=lang("Opening_Hours")?></h2>
 
-                    <ul class="p-0 m-0">
-                      <?=lang('Opening_Hours_tr')?>
-                    </ul>
-                </div>
-            </div>
+<!-- =========================
+	Google Map
+=========================  -->
+<section class="google-map py-0">
+	<iframe frameborder="0" height="500" width="100%"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.6038954614!2d31.328505151458963!3d30.059618470346624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2z2KfZhNmC2KfZh9ix2KnYjCDZhdit2KfZgdi42Kkg2KfZhNmC2KfZh9ix2KnigKw!5e0!3m2!1sar!2seg!4v1642315862499!5m2!1sar!2seg"></iframe>
+</section><!-- /.GoogleMap -->
+<!-- ==========================
+	contact layout 1
+=========================== -->
+<?php
+$address = 'Arab Republic of Egypt First Settlement, New Cairo Six Neighborhood, Villa 381';
+$addressOther = 'United Arab Emirates Ajman Free Zone B.C. 1301423';
+$phone = (isset($this->setting->phones)) ? $this->setting->phones:'+971 55 455 3340';
+$mail  = (isset($this->setting->emails)) ? $this->setting->emails:'info@daystar-mea.com';
+if (isset($this->setting) && !empty($this->setting)):
+	if ($this->webLang == "ar") {
+		$address =  (isset($this->setting->ar_address)) ? $this->setting->ar_address: $address;
+		$addressOther = (isset($this->setting->ar_address_other))? $this->setting->ar_address_other :$addressOther;
+	}
+	elseif ($this->webLang == "en") {
+		$address =  (isset($this->setting->en_address)) ? $this->setting->en_address: $address;
+		$addressOther = (isset($this->setting->en_address_other))? $this->setting->en_address_other :$addressOther;
+	}
+	elseif ($this->webLang == "es") {
+		$address =  (isset($this->setting->es_address)) ? $this->setting->es_address: $address;
+		$addressOther = (isset($this->setting->es_address_other))? $this->setting->es_address_other :$addressOther;
+	}
+endif;
+?>
+<section class="contact-layout1 pt-0 mt--100">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="contact-panel d-flex flex-wrap">
+					<form class="contact-panel__form" method="post" action="#" id="contactForm">
+						<div class="row">
+							<div class="col-sm-12">
+								<h4 class="contact-panel__title">How Can We Help? </h4>
+								<p class="contact-panel__desc mb-30">Please feel welcome to contact our friendly reception staff
+									with any general or medical enquiry. Our doctors will receive or return any urgent calls.
+								</p>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<div class="form-group">
+									<i class="icon-user form-group-icon"></i>
+									<input type="text" class="form-control" placeholder="<?=lang("name")?>" id="contact-name" name="contact-name"
+										   required>
+								</div>
+							</div><!-- /.col-lg-6 -->
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<div class="form-group">
+									<i class="icon-email form-group-icon"></i>
+									<input type="email" class="form-control" placeholder="<?=lang('emails')?>" id="contact-email"
+										   name="contact-email" required>
+								</div>
+							</div><!-- /.col-lg-6 -->
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<div class="form-group">
+									<i class="icon-phone form-group-icon"></i>
+									<input type="text" class="form-control" placeholder="<?=lang('Subject')?>" id="contact-Phone"
+										   name="contact-phone" required>
+								</div>
+							</div><!-- /.col-lg-6 -->
+							<div class="col-12">
+								<div class="form-group">
+									<i class="icon-alert form-group-icon"></i>
+									<textarea class="form-control" placeholder="<?=lang('message')?>" id="contact-message"
+											  name="contact-message"></textarea>
+								</div>
+								<button type="submit" class="btn btn__secondary btn__rounded btn__block btn__xhight mt-10">
+									<span><?=lang('send_now')?></span> <i class="icon-arrow-right"></i>
+								</button>
+								<div class="contact-result"></div>
+							</div><!-- /.col-lg-12 -->
+						</div><!-- /.row -->
+					</form>
+					<div
+							class="contact-panel__info d-flex flex-column justify-content-between bg-overlay bg-overlay-primary-gradient">
+						<div class="bg-img"><img src="<?=base_url().WEBASSETS?>images/banners/1.jpg" alt="banner"></div>
+						<div>
+							<h4 class="contact-panel__title color-white"><?=lang('Contact_Info')?></h4>
+							<!--<p class="contact-panel__desc font-weight-bold color-white mb-30">Please feel free to contact our
+								friendly staff with any medical enquiry.
+							</p>-->
+						</div>
+						<div>
+							<ul class="contact__list list-unstyled mb-30">
+								<li>
+									<i class="icon-phone"></i><a href="tel:<?=$phone?>"><?=lang("Emergency")?>: <?=$phone?></a>
+								</li>
+								<li>
+									<i class="icon-location"></i><a href="#"><?=lang('address')?>: <?=$address?></a>
+								</li>
+								<li>
+									<i class="icon-clock"></i><a href="#"><?=lang('Opening_Hours_tr')?></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /.contact layout 1 -->
 
-            <div class="col-12 col-lg-4 col-md-6 mt-5 mt-lg-0">
-                <div class="emergency-box h-100">
-                    <h2 class="d-flex align-items-center"><?=lang("Emergency")?></h2>
 
-                    <div class="call-btn text-center">
-                        <a class="d-flex justify-content-center align-items-center button gradient-bg" href="#">
-                            <img src="<?=base_url().WEBASSETS?>images/icon/emergency-call.png"> <?=$phone?></a>
-                    </div>
-
-					<?php if (isset($this->setting) && !empty($this->setting)): ?>
-						<p>
-							<?php
-							if($this->webLang == "ar"){
-								echo (isset($this->setting->ar_about))? word_limiter($this->setting->ar_about,25):"-";
-							}
-							elseif($this->webLang == "en"){
-								echo (isset($this->setting->en_about))? word_limiter($this->setting->en_about,25):"-";
-							}
-							elseif($this->webLang == "es"){
-								echo (isset($this->setting->es_about))? word_limiter($this->setting->es_about,25):"-";
-							}
-							?>
-						</p>
-					<?php else: ?>
-						<p>Based on more than 20 years of experience in the field of medical devices in Middle East
-							North Africa region.
-						</p>
-					<?php endif ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="contact-form">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2><?=lang('Get_in_Touch')?></h2>
-            </div>
-
-            <div class="col-12  col-md-4">
-                <input type="text" placeholder="<?=lang("name")?>">
-            </div><!-- col-4 -->
-
-            <div class="col-12 col-md-4">
-                <input type="email" placeholder="<?=lang('emails')?>>">
-            </div><!-- col-6 -->
-
-            <div class="col-12 col-md-4">
-                <input type="text" placeholder="<?=lang('Subject')?>">
-            </div>
-
-            <div class="col-12">
-                <textarea name="name" rows="12" cols="80" placeholder="<?=lang('message')?>"></textarea>
-            </div>
-
-            <div class="col-12">
-                <input type="submit" name="" value="<?=lang('send_now')?>" class="button gradient-bg">
-            </div>
-        </div><!-- row -->
-    </div>
-</div>

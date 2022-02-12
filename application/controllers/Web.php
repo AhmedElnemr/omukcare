@@ -9,6 +9,10 @@ class Web extends CI_Controller
 		//--------------------------------------------------------
 		$this->load->model('system_management/Setting_model');
 		$this->setting = $this->Setting_model->getSettings();
+
+		$this->load->model('market/Departments_model');
+		$this->departments = $this->Departments_model->get_many_by(["level"=>2]);
+		//---------------------------------------------------
 		//--------------------------------------------------------
 		$lang = $this->uri->segment(1);
 		if (in_array($lang, array("ar", "en", "es"))) {
@@ -259,6 +263,21 @@ class Web extends CI_Controller
 		$this->load->view('layout/web', $data);
 	}
 
+	public function serviceDetails($id){
+		$this->load->model('Services_model');
+		$this->load->model('Slider_model');
+		$data['main'] = $this->Services_model->get($id);
+		//$this->test($data["main"]);
+		$data['services'] = $this->Services_model->get_many_by(["perant_id" => $id]);
+		$bannerText = $this->Slider_model->get_by(["link"=>"home-care"]);
+		$data["banner"] = ["title" => lang("home_care"),"text"=>$bannerText];
+		$data['metadiscription'] = $data['metakeyword'] = $data['title'] = lang("home_care");
+		$data['subview'] = 'services_detail';
+		$data["page_name"] = "home-care";
+		// $data['myFiles'] = ['home'];
+		$this->load->view('layout/web', $data);
+	}
+
 	/**
 	 *  ============================================================
 	 *
@@ -295,7 +314,7 @@ class Web extends CI_Controller
 	{
 		$this->load->model('system_management/Contacts_model');
 		//==================================================
-		$data["banner"] = ["title" => lang("contact_us")];
+		//$data["banner"] = ["title" => lang("contact_us")];
 		$data['metadiscription'] = $data['metakeyword'] = $data['title'] = lang("contact_us");
 		$data['subview'] = 'contact_us';
 		$data["page_name"] = "contact-us";

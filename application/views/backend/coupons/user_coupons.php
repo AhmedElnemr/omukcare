@@ -1,4 +1,8 @@
-<div class="m-portlet__body">
+<div class="card">
+	<div class="card-header border-bottom-0">
+		<h3 class="card-title"><?= (isset($title) ? $title : "") ?></h3>
+	</div>
+	<div class="card-body">
 	<?php if(isset($data_table ) && $data_table!=null && !empty($data_table)):?>
 		<table id="myTable" class="table table-bordered table-striped">
 			<thead>
@@ -29,4 +33,5 @@
                   <span aria-hidden="true">×</span> </button>
              </div>';
 	endif;?>
+	</div>
 </div>

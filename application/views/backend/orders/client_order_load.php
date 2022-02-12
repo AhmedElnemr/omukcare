@@ -22,28 +22,44 @@
 					<?php
 					switch ($row->order_status) {
 						case ORDER_WAT_PAY:
+							 echo '<span class="badge badge-pill badge-default mt-2">';
 							 echo 'غير مكتم الدفع الالكترونى';
+							 echo '</span>';
 							break;
 						case ORDER_START:
+							 echo '<span class="badge badge-pill badge-info mt-2">';
 							 echo 'طلب جديد';
+							 echo '</span>';
 							break;
 						case ORDER_BLOCKED:
+							 echo '<span class="badge badge-pill badge-warning mt-2">';
 							 echo 'طلب معلق';
+							 echo '</span>';
 							break;
 						case ORDER_ACCEPT:
+							 echo '<span class="badge badge-pill badge-primary mt-2">';
 							 echo 'طلب حالى ';
+							 echo '</span>';
 							break;
 						case ORDER_END:
+							 echo '<span class="badge badge-pill badge-default mt-2">';
 							 echo 'طلب سابق';
+							 echo '</span>';
 							break;
 						case ORDER_END_ALL:
+							 echo '<span class="badge badge-pill badge-info mt-2">';
 							 echo 'طلب سابق ';
+							 echo '</span>';
 							break;
 						case ORDER_CANCEL:
+							 echo '<span class="badge badge-pill badge-danger mt-2">';
 							 echo 'طلب ملغى ';
+							 echo '</span>';
 							break;
 						case ORDER_DELETE:
+							 echo '<span class="badge badge-pill badge-danger mt-2">';
 							 echo 'طلب ملغى';
+							 echo '</span>';
 							break;
 					}
 					?>
@@ -53,24 +69,23 @@
 					<!-- 1- cash  / vodafone cash / 3 - online pay  / 4 - aman  -->
 						<?php
 			   if($row->payment == 1){
-				   echo '<button type="button" class="btn btn-outline-accent m-btn m-btn--outline-2x ">كاش</button>';
+				   echo '<span class="badge badge-success mt-2">كاش</span>';
 			   }
 			   elseif ($row->payment == 2){
-				   echo '<button type="button" class="btn btn-outline-danger m-btn m-btn--outline-2x ">فودافون كاش </button>';
+				   echo '<span class="badge badge-danger mt-2">فودافون كاش </span>';
 			   }
 			   elseif ($row->payment == 3){
-				   echo '<button type="button" class="btn btn-outline-dark m-btn m-btn--outline-2x ">دفع الكترونى </button>';
+				   echo '<span class="badge badge-info mt-2">دفع الكترونى </span>';
 			   }else{
-				   echo '<button type="button" class="btn btn-outline-primary m-btn m-btn--outline-2x ">أمان </button>';
+				   echo '<span class="badge badge-warning mt-2">أمان </span>';
 			   }
 			    ?>
 					</td>
 				<td><?= (isset($row->provider->name)) ? $row->provider->name : "غير محدد" ?></td>
 				<td>
-					<button type="button" class="btn m-btn m-btn--gradient-from-focus m-btn--gradient-to-danger"
-							data-toggle="modal" data-target="#m_modal_details"
-							onclick="getOrderData('<?= $row->order_id ?>');">التفاصيل
-					</button>
+					<a class="btn btn-primary" data-bs-target="#m_modal_details" data-bs-toggle="modal"  onclick="getOrderData('<?=$row->order_id?>');">
+						التفاصيل
+					</a>
 				</td>
 			</tr>
 		<?php endforeach; ?>

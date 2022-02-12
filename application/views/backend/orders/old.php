@@ -1,4 +1,8 @@
-<div class="m-portlet__body">
+<div class="card">
+	<div class="card-header border-bottom-0">
+		<h3 class="card-title"><?= (isset($title) ? $title : "") ?></h3>
+	</div>
+	<div class="card-body">
 	<?php if(isset($data_table ) && $data_table!=null && !empty($data_table)):?>
 		<table id="myTable" class="table table-bordered table-striped">
 			<thead>
@@ -41,13 +45,19 @@
 					</td>-->
 					<td><?=$row->price?></td>
 					<td>
-						<button type="button" class="btn m-btn m-btn--gradient-from-focus m-btn--gradient-to-danger"
-								data-toggle="modal" data-target="#m_modal_details" onclick="getOrderData('<?=$row->order_id?>');" >التفاصيل</button>
+					<!--	<button type="button" class="btn m-btn m-btn--gradient-from-focus m-btn--gradient-to-danger"
+								data-toggle="modal" data-target="#m_modal_details" onclick="getOrderData('<?/*=$row->order_id*/?>');" >التفاصيل</button>
+					-->
+						<a class="btn btn-primary" data-bs-target="#m_modal_details" data-bs-toggle="modal"  onclick="getOrderData('<?=$row->order_id?>');">
+							التفاصيل
+						</a>
 					</td>
 					<td class="text-center">
 						<a href="<?=base_url()."admin-orders/delete/".$row->order_id?>" onclick="return confirm('هل انت متأكد من عملية الحذف ؟');">
 							<button type="button" class="btn m-btn--pill btn-danger btn-sm" title="حذف">
-								<i class="fa fa-trash-alt fa-xs"> </i> </button></a>
+								<i class="fa fa-trash" data-bs-toggle="tooltip" title="الحذف" data-bs-original-title="fa fa-trash" aria-label="الحذف"></i>
+							</button>
+						</a>
 					</td>
 
 				</tr>
@@ -60,4 +70,5 @@
                   <span aria-hidden="true">×</span> </button>
              </div>';
 	endif;?>
+	</div>
 </div>

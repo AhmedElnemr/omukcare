@@ -6,8 +6,6 @@ else:
 	$out['input_title'] = 'حفظ ';
 endif ?>
 
-<?= form_open_multipart($form, ["class" => 'm-form m-form--label-align-right']); ?>
-
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
@@ -28,14 +26,13 @@ endif ?>
 						</div>
 					<?php } ?>
 				<?php } ?>
-				<button type="submit" name="<?php echo $out['input'] ?>" value="<?php echo $out['input'] ?>"
+				<button type="submit" name="<?= $out['input'] ?>" value="<?= $out['input'] ?>"
 						class="btn btn-primary">
-					<span><i class="fa fa-floppy-o" aria-hidden="true"></i></span> <?php echo $out['input_title'] ?>
+					<span><i class="fa fa-floppy-o" aria-hidden="true"></i></span> <?= $out['input_title'] ?>
 				</button>
 				<?= form_close() ?>
 			</div>
 		</div>
 	</div>
-
 </div>
 

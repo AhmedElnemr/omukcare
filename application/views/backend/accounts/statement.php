@@ -1,5 +1,9 @@
-<div class="m-portlet__body">
-	<div class="form-group m-form__group row">
+<div class="card">
+	<div class="card-header border-bottom-0">
+		<h3 class="card-title"><?= (isset($title) ? $title : "") ?></h3>
+	</div>
+	<div class="card-body">
+		<div class="form-group row">
 		<div class="col-lg-5">
 			<label>مقدم الخدمة :</label>
 			<select id="user_id" class="form-control m-input">
@@ -34,5 +38,6 @@
 		</div>
 
 	</div>
-	<div class="" id="option_result"></div>
+		<div class="" id="option_result"></div>
+	</div>
 </div>

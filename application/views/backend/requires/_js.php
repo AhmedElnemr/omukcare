@@ -29,8 +29,11 @@
 <!-- Select2 js -->
 <script src="<?= base_url() . ADMINASSETS ?>plugins/select2/select2.full.min.js"></script>
 
+
 <!-- Custom js-->
 <script src="<?= base_url() . ADMINASSETS ?>js/custom.js"></script>
+
+
 
 <?php   $this->load->view('backend/requires/config_js');?>
 <script src="<?= base_url() . ASS ?>script/my_script.js?v=<?=time()?>" type="text/javascript"></script>
@@ -80,6 +83,27 @@
 	})
 </script>
 <?php if (isset($my_footer)) { ?>
+	<!----------------------------------------------------------->
+	<?php if (in_array("Counters", $my_footer)): ?>
+		<!-- INTERNAL Time Counter -->
+		<script src="<?= base_url() . ADMINASSETS ?>plugins/counters/counterup.min.js"></script>
+		<script src="<?= base_url() . ADMINASSETS ?>plugins/counters/waypoints.min.js"></script>
+		<script src="<?= base_url() . ADMINASSETS ?>plugins/counters/counter.js"></script>
+
+		<!-- INTERNAL Counters -->
+	    <!--
+		<script src="<?= base_url() . ADMINASSETS ?>plugins/countdown/countdowntime.js"></script>
+		<script src="<?= base_url() . ADMINASSETS ?>js/countdown.js"></script>
+		-->
+	<?php endif; ?>
+	<!----------------------------------------------------------->
+	<?php if(in_array("flot_chart",$my_footer)):?>
+		<!-- INTERNAL Flot Charts js-->
+		<script src="<?= base_url() . ADMINASSETS ?>plugins/flot/jquery.flot.js"></script>
+		<script src="<?= base_url() . ADMINASSETS ?>plugins/flot/jquery.flot.fillbetween.js"></script>
+		<script src="<?= base_url() . ADMINASSETS ?>plugins/flot/jquery.flot.pie.js"></script>
+		<script src="<?= base_url() . ADMINASSETS ?>js/flot.js"></script>
+	<?php endif;  ?>
 	<!----------------------------------------------------------->
 	<?php if(in_array("multi_upload",$my_footer)):?>
 		<script type="text/javascript" src="<?=base_url().ASS?>multi-upload/imageuploadify.min.js?v=<?=VER?>"></script>
@@ -172,4 +196,5 @@
 	<?php endif ?>
 	<!----------------------------------------------------------->
 <?php } ?>
+
 

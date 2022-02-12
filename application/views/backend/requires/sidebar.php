@@ -33,23 +33,11 @@
 
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-slider" ?>"> عرض بنرات الموقع </a>
 							</li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-slider/add" ?>"> إضافة بنر
-									الموقع </a></li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "app-slider" ?>"> عرض بنر التطبيق </a>
-							</li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "app-slider/add" ?>"> إضافة بنر
-									التطبيق </a></li>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-slider/add" ?>"> إضافة بنر الموقع </a></li>
 
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-coupons" ?>"> عرض الكوبونات </a>
-							</li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-coupons/add" ?>"> إضافة كوبون </a>
-							</li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-coupons/user_coupons" ?>">
-									الكوبونات المستخدمة </a></li>
 
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-area" ?>"> عرض المناطق </a></li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-area/add" ?>"> إضافة منطقة </a>
-							</li>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-area/add" ?>"> إضافة منطقة </a></li>
 
 						</ul>
 					</li>
@@ -61,19 +49,17 @@
 							<i class="fa fa-angle-down horizontal-icon"></i>
 						</a>
 						<ul class="sub-menu">
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-main-service" ?>">الخدمات
-									الرئيسية </a></li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-main-service/add" ?>">إضافة خدمة
-									رئيسية</a></li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-main-service/deleted" ?>"> الخدمات
-									الرئيسية المحذوفة</a></li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-sub-service" ?>"> الخدمات
-									الفرعية </a></li>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-main-service" ?>">الخدمات الرئيسية </a></li>
+
+							<?php if ($_SESSION['is_developer'] == 1): ?>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-main-service/add" ?>">إضافة خدمة رئيسية</a></li>
+							<?php endif ?>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-main-service/deleted" ?>"> الخدمات الرئيسية المحذوفة</a></li>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-sub-service" ?>"> الخدمات الفرعية</a></li>
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-sub-service/add" ?>"> إضافة خدمة
 									فرعية </a></li>
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-sub-service/deleted" ?>"> الخدمات
 									الفرعية المحذوفة </a></li>
-
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-specialties" ?>"> تخصصات
 									الاطباء </a></li>
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-specialties/add" ?>"> إضافة
@@ -123,7 +109,7 @@
 							<i class="fa fa-angle-down horizontal-icon"></i>
 						</a>
 						<ul class="sub-menu">
-							<li aria-haspopup="true"><a href="<?= base_url() . "adminorders/new" ?>">الجديدة</a></li>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-orders/new" ?>">الجديدة</a></li>
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-orders/current" ?>">الحالية</a>
 							</li>
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-orders/old" ?>">السابقة</a></li>
@@ -167,6 +153,19 @@
 						<ul class="sub-menu">
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-supplier" ?>">عرض</a></li>
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-supplier/add" ?>">اضافة</a></li>
+						</ul>
+					</li>
+                    <li aria-haspopup="true">
+						<a href="#" class="">
+							<i class="feather feather-codepen hor-icon"></i>
+							الكوبونات
+							<i class="fa fa-angle-down horizontal-icon"></i>
+						</a>
+						<ul class="sub-menu">
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-coupons" ?>"> عرض الكوبونات </a></li>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-coupons/add" ?>"> إضافة كوبون </a></li>
+							<li aria-haspopup="true"><a href="<?= base_url() . "admin-coupons/user_coupons" ?>"> الكوبونات المستخدمة </a></li>
+
 						</ul>
 					</li>
 

@@ -1,4 +1,8 @@
-<div class="m-portlet__body">
+<div class="card">
+	<div class="card-header border-bottom-0">
+		<h3 class="card-title"><?= (isset($title) ? $title : "") ?></h3>
+	</div>
+	<div class="card-body">
     <?php if(isset($data_table ) && $data_table!=null && !empty($data_table)):?>
         <table id="myTable" class="table table-bordered table-striped">
             <thead>
@@ -32,12 +36,12 @@
                     <td><?=$row->service_data->trans->title?></td>
                     <td><?=$row->about?></td>
                     <td><?=$row->email?></td>
-                    <td class="text-center">
+                    <td >
                         <a href="<?=base_url()."admin-provider/approve/1/".$row->user_id?>">
-                            <button type="button" class="btn m-btn--pill btn-info btn-sm" title="موافقة " onclick="return confirm('هل انت متأكد من عملية القبول ؟');">
+                            <button type="button" class="btn  btn-info btn-sm" title="موافقة " onclick="return confirm('هل انت متأكد من عملية القبول ؟');">
                                 <i class="fa fa-check fa-xs"></i>  موافقة </button></a>
                         <a href="<?=base_url()."admin-provider/approve/2/".$row->user_id?>" onclick="return confirm('هل انت متأكد من عملية الرفض ؟');">
-                            <button type="button" class="btn m-btn--pill btn-danger btn-sm" title="رفض ">
+                            <button type="button" class="btn  btn-danger btn-sm" title="رفض ">
                                 <i class="fa fa-times fa-xs"> </i> رفض </button></a>
                     </td>
                 </tr>
@@ -50,4 +54,5 @@
                   <span aria-hidden="true">×</span> </button>
              </div>';
     endif;?>
+	</div>
 </div>

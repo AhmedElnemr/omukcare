@@ -7,14 +7,14 @@
 	<meta name="keywords" content="OmukCare"/>
 
 	<!-- Title -->
-	<title>OmukCare</title>
+	<title>Omuk Care</title>
 	<!--Favicon -->
-	<link rel="icon" href="<?= base_url() . ADMINASSETS ?>images/brand/favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="<?= base_url() . FAVICONPATH ?>favicon.png" type="image/x-icon"/>
 
 	<!-- Bootstrap css -->
 	<link href="<?= base_url() . ADMINASSETS ?>plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
 	<!-- Style css -->
-	<link href="<?= base_url() . ADMINASSETS ?>css/style.css" rel="stylesheet" />
+	<link href="<?= base_url() . ADMINASSETS ?>css/style.css?v=<?=time()?>" rel="stylesheet" />
 	<link href="<?= base_url() . ADMINASSETS ?>css/boxed.css" rel="stylesheet" />
 	<link href="<?= base_url() . ADMINASSETS ?>css/dark.css" rel="stylesheet" />
 	<link href="<?= base_url() . ADMINASSETS ?>css/skin-modes.css" rel="stylesheet" />
@@ -54,5 +54,6 @@
 		<!----------------------------------------------------------->
 	<?php } ?>
 	<!--end::Page Vendors Styles -->
+
 
 </head>

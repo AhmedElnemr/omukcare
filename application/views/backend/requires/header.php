@@ -2,11 +2,11 @@
 	<div class="container">
 		<div class="d-flex">
 			<a class="animated-arrow hor-toggle horizontal-navtoggle"><span></span></a>
-			<a class="header-brand header-brand1" href="#">
-				<img src="<?= base_url() . ADMINASSETS ?>images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Dayonelogo">
-				<img src="<?= base_url() . ADMINASSETS ?>images/brand/logo-white.png" class="header-brand-img dark-logo" alt="Dayonelogo">
-				<img src="<?= base_url() . ADMINASSETS ?>images/brand/favicon.png" class="header-brand-img mobile-logo" alt="Dayonelogo">
-				<img src="<?= base_url() . ADMINASSETS ?>images/brand/favicon1.png" class="header-brand-img darkmobile-logo" alt="Dayonelogo">
+			<a class="header-brand header-brand1" href="<?=base_url().'Dashboard'?>">
+				<img src="<?= base_url() . FAVICONPATH ?>logo.jpeg" height="36" class="header-brand-img desktop-lgo" alt="Dayonelogo">
+				<img src="<?= base_url() . FAVICONPATH ?>logo-light.png" class="header-brand-img dark-logo" alt="Dayonelogo">
+				<img src="<?= base_url() . FAVICONPATH ?>favicon.ico" class="header-brand-img mobile-logo" alt="Dayonelogo">
+				<img src="<?= base_url() . FAVICONPATH ?>favicon.ico" class="header-brand-img darkmobile-logo" alt="Dayonelogo">
 			</a>
 			<div class="mt-0">
 				<form class="form-inline">

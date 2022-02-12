@@ -6,10 +6,13 @@ else:
     $out['input_title']='حفظ ';
 endif?>
 
-<?=form_open_multipart($form,["class"=>'m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed']);?>
-
-<div class="m-portlet__body">
-    <div class="form-group m-form__group row">
+<div class="card">
+	<div class="card-header border-bottom-0">
+		<h3 class="card-title"><?= (isset($title) ? $title : "") ?></h3>
+	</div>
+	<div class="card-body">
+    <?=form_open_multipart($form);?>
+    <div class="row form-group">
         <div class="col-lg-4">
             <label>اسم الخدمة  (ar):</label>
             <input type="text" name="Pdata[ar][title]" value="<?= $out["ar"]["title"] ?>"
@@ -29,7 +32,7 @@ endif?>
                    data-validation="required">
         </div>
 	</div>
-	<div class="form-group m-form__group row">
+	<div class="row form-group">
         <div class="col-lg-6">
             <label> أيقونت التطبيق  </label>
             <?php if ($op == 'UPDTATE') { ?>
@@ -51,26 +54,13 @@ endif?>
             <?php } ?>
         </div>
     </div>
-
+		<button type="submit" name="<?= $out['input'] ?>" value="<?= $out['input'] ?>"
+				class="btn btn-primary">
+			<span><i class="fa fa-floppy-o" aria-hidden="true"></i></span> <?= $out['input_title'] ?>
+		</button>
+		<?= form_close() ?>
+	</div>
 </div>
-
-<div class="m-portlet__foot m-portlet__no-border m-portlet__foot--fit">
-    <div class="m-form__actions m-form__actions--solid">
-        <div class="row">
-            <div class="col-lg-6">
-                <button type="submit" name="<?php echo $out['input']?>" value="<?php echo $out['input']?>"
-                        class="btn btn-primary">
-                    <span><i class="fa fa-floppy-o" aria-hidden="true"></i></span> <?php echo $out['input_title']?>
-                </button>
-                <!--     <button type="reset" class="btn btn-secondary">Cancel</button>-->
-            </div>
-            <div class="col-lg-6 m--align-right">
-                <!--  <button type="reset" class="btn btn-danger">Delete</button>-->
-            </div>
-        </div>
-    </div>
-</div>
-<?= form_close()?>
 
 
 

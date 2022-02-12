@@ -1,4 +1,8 @@
-<div class="m-portlet__body">
+<div class="card">
+	<div class="card-header border-bottom-0">
+		<h3 class="card-title"><?= (isset($title) ? $title : "") ?></h3>
+	</div>
+	<div class="card-body">
 	<?php if(isset($data_table ) && $data_table!=null && !empty($data_table)):?>
 		<table id="myTable" class="table table-bordered table-striped">
 			<thead>
@@ -26,8 +30,9 @@
 					</td>
 					<td class="text-center">
 						<a href="<?= base_url() . "app-news/undeleted/" . $row->service_id ?>">
-							<button type="button" class="btn m-btn--pill btn-info btn-sm" title="اعادة ">
-								<i class="fa fa-pen-alt fa-xs"></i></button>
+							<button type="button" class="btn m-btn--pill btn-success btn-sm" title="اعادة ">
+								<i class="fa fa-reply" data-bs-toggle="tooltip" title="اعادة" data-bs-original-title="fa fa-edit" aria-label="اعادة"></i>
+							</button>
 						</a>
 					</td>
 				</tr>
@@ -40,4 +45,5 @@
                   <span aria-hidden="true">×</span> </button>
              </div>';
 	endif;?>
+	</div>
 </div>

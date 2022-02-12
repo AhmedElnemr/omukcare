@@ -1,4 +1,8 @@
-<div class="m-portlet__body">
+<div class="card">
+	<div class="card-header border-bottom-0">
+		<h3 class="card-title"><?= (isset($title) ? $title : "") ?></h3>
+	</div>
+	<div class="card-body">
     <?php if(isset($data_table ) && $data_table!=null && !empty($data_table)):?>
         <table id="myTable" class="table table-bordered table-striped">
             <thead>
@@ -30,11 +34,15 @@
                     <td><?=$row->email?></td>
                     <td class="text-center">
                         <a href="<?=base_url()."admin-person/edit/".$row->user_id?>">
-                            <button type="button" class="btn m-btn--pill btn-info btn-sm" title="تعديل ">
-                                <i class="fa fa-pen-alt fa-xs"></i></button></a>
+							<button type="button" class="btn m-btn--pill btn-info btn-sm" title="تعديل ">
+								<i class="fa fa-edit" data-bs-toggle="tooltip" title="تعديل" data-bs-original-title="fa fa-edit" aria-label="تعديل"></i>
+							</button>
+						</a>
                         <a href="<?=base_url()."admin-person/delete/".$row->user_id?>" onclick="return confirm('هل انت متأكد من عملية الحذف ؟');">
-                            <button type="button" class="btn m-btn--pill btn-danger btn-sm" title="حذف">
-                                <i class="fa fa-trash-alt fa-xs"> </i> </button></a>
+							<button type="button" class="btn m-btn--pill btn-danger btn-sm" title="حذف">
+								<i class="fa fa-trash" data-bs-toggle="tooltip" title="الحذف" data-bs-original-title="fa fa-trash" aria-label="الحذف"></i>
+							</button>
+						</a>
 
                     </td>
                 </tr>
@@ -47,4 +55,5 @@
                   <span aria-hidden="true">×</span> </button>
              </div>';
     endif;?>
+	</div>
 </div>

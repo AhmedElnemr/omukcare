@@ -29,18 +29,21 @@
 					<td class="text-center">
 						<a href="<?= base_url() . "admin-sub-service/edit/" . $row->service_id ?>">
 							<button type="button" class="btn m-btn--pill btn-info btn-sm" title="تعديل ">
-								<i class="fa fa-pen-alt fa-xs"></i></button>
+								<i class="fa fa-edit" data-bs-toggle="tooltip" title="تعديل" data-bs-original-title="fa fa-edit" aria-label="تعديل"></i>
+							</button>
 						</a>
 						<a href="<?= base_url() . "admin-sub-service/delete/" . $row->service_id ?>"
 						   onclick="return confirm('هل انت متأكد من عملية الحذف ؟');">
 							<button type="button" class="btn m-btn--pill btn-danger btn-sm" title="حذف">
-								<i class="fa fa-trash-alt fa-xs"> </i></button>
+								<i class="fa fa-trash" data-bs-toggle="tooltip" title="الحذف" data-bs-original-title="fa fa-trash" aria-label="الحذف"></i>
+							</button>
 						</a>
 					</td>
 					<td class="text-center">
 						<a href="<?= base_url() . "admin-sub-service/prices/" . $row->service_id."/".$row->perant_id ?>">
-							<button type="button" class="btn m-btn--pill btn-success btn-sm" title="تعديل ">
-								<i class="fa fa-money-bill-alt fa-xs"></i></button>
+							<button type="button" class="btn m-btn--pill btn-success btn-sm" title="تعديل الاسعار ">
+								<i class="fa fa-bank" data-bs-toggle="tooltip" title="تعديل الاسعار" data-bs-original-title="fa fa-edit" aria-label="تعديل الاسعار"></i>
+							</button>
 						</a>
 					</td>
 				</tr>

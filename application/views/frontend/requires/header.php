@@ -11,7 +11,10 @@
 	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/libraries.css">
 	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/owl.carousel.min.css">
 	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/style.css">
+	<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/style.css?v=<?= time() ?>">
+	<?php if ($this->webLang == "ar"): ?>
+		<link rel="stylesheet" href="<?= base_url() . WEBASSETS ?>css/bootstrap-rtl.css?v=<?= time() ?>"/>
+	<?php endif ?>
 </head>
 
 <body>

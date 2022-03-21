@@ -1262,7 +1262,7 @@ html {
   .page-title .breadcrumb-item a,
   .page-title .breadcrumb-item.active,
   .page-title .breadcrumb-item + .breadcrumb-item::before {
-    color: #e6cbeb;
+    color: #fbf4f9;
   }
   
   .page-title .btn {
@@ -2190,7 +2190,8 @@ html {
   
   .breadcrumb-item {
     position: relative;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
   }
   
   .breadcrumb-item + .breadcrumb-item::before {
@@ -4656,14 +4657,14 @@ html {
   /* Large Size Screens */
   @media (min-width: 992px) and (max-width: 1200px) {
     .slider .slide__title {
-      font-size: 65px;
+      font-size: 53px;
     }
   }
   
   /* Medium Size Screens */
   @media (min-width: 768px) and (max-width: 991px) {
     .slider .slide__title {
-      font-size: 50px;
+      font-size: 40px;
       margin-bottom: 10px;
     }
   }
@@ -5035,7 +5036,7 @@ html {
   overflow-y: scroll;
 }
 .login-page #v-pills-tabContent #v-pills-home{
-  overflow-y: hidden;
+  overflow-y: visible;
 }
 .login-page #v-pills-tabContent .form-control.signin {
   border-radius: 8px;
@@ -5044,7 +5045,7 @@ html {
   background: #a408bb;
   color: #fff;
   margin-bottom: 20px;
-  margin: 0 82%;
+  margin: 0 0 0 81%;
 }
 .login-page #v-pills-tabContent .form-control{
   border-radius: 8px;
@@ -5219,6 +5220,7 @@ html {
   }
   
   .features-layout1:after {
+    display: none;
     content: '';
     position: absolute;
     bottom: 0;
@@ -6784,7 +6786,7 @@ Section Title Area Style*/
   .contact-layout1 .contact-panel__info,
   .contact-layout2 .contact-panel__info {
     position: relative;
-    padding: 55px 60px;
+    padding: 55px 40px;
     border-radius: 20px;
     overflow: hidden;
     -webkit-box-flex: 0;
@@ -7699,7 +7701,7 @@ Section Title Area Style*/
   
   .about-layout1 .about__Text p,
   .about-layout4 .about__Text p {
-    font-size: 16px;
+    font-size: 15px;
     color: #213360;
   }
   
@@ -8460,6 +8462,8 @@ Section Title Area Style*/
   } 
   .product-item .product__action a.btn{
     background: #a408bb;
+    color: #fff;
+    border-radius: 50px;
   }
   .product-item .product__info {
     padding: 28px 0;
@@ -8528,6 +8532,8 @@ Section Title Area Style*/
     margin-top: 22px;
     background: #a408bb;
     height: 50px;
+    border-radius: 50px;
+    color: #fff;
   }
   
   .product__img {
@@ -9135,4 +9141,391 @@ Section Title Area Style*/
     right: 0;
     color: #848e9f;
   }
-  /*# sourceMappingURL=style.css.map */
+/* ======================================= responsive ======================================= */
+
+@media only screen and (max-width: 2560px) {
+  .login-page,
+  .login-page .overlay{
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 1440px) {
+ 
+
+}
+@media only screen and (max-width: 1119px) {
+  .heading-layout2 .heading__title{
+    font-size: 32px;
+  }
+  .work-process .btn-downloads {
+    margin: 0 auto;
+    width: 66%;
+}
+.product__title a{
+  font-size: 15px;
+}
+.contact-layout1 .contact-panel__info, .contact-layout2 .contact-panel__info{
+  max-width: 36%;
+  margin-left: 16px;
+  padding: 40px 15px;
+}
+
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  .process-item{
+    padding: 20px 8px;
+  }
+  .process-item .process__number{
+    font-size: 58px;
+  }
+  .process-item .process__icon{
+    font-size: 37px;
+  }
+  .work-process .btn-downloads{
+    width: 90%;
+  }
+  .services-area.bg{
+    height: auto;
+  }
+  #content .fancybox-layout1 .fancybox-item{
+    padding: 30px 10;
+  }
+  #content .fancybox-layout1 .fancybox-item .btn{
+    min-width:140px;
+    height: 38px;
+  }
+  #content .fancybox-item .fancybox__desc {
+    margin-bottom: 30px;
+  }
+  #msform fieldset{
+    width: 96%;
+    margin: 0 2%;
+  }
+  .contact-layout1 .contact-panel__info, .contact-layout2 .contact-panel__info {
+    max-width: 97%;
+  }
+  .sidebar-box .user .usercontent{
+    display: inline-block;
+  }
+  .sidebar-box .user figure{
+    margin: auto 27%;
+    float: none;
+  }
+  .sidebar-box .user{
+    padding: 5px 3px;
+  }
+  .sidebar-box .navdashboard ul li a i {
+    width: 27px;
+  }
+  .sidebar-box .navdashboard ul li a span{
+    font-size: 12px;
+  }
+  .sidebar-box .navdashboard ul li, .sidebar-box .navdashboard ul li a.active{
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 479px) {
+.heading-layout2 .heading__title {
+    font-size: 28px;
+}
+.process-item {
+  padding: 20px;
+  width: 96% !important;
+  height: 265px;
+  margin: 0 5px;
+  margin-bottom: 20px;
+}
+.work-process .btn-downloads{
+  width: 100%;
+}
+.work-process .download-btn{
+  margin: 0 7px;
+  padding: 0 12px 0 87px;
+}
+.section-title h2 {
+  font-size: 32px;
+}
+.services-area.bg{
+  height: auto;
+}
+#content .fancybox-layout1 .fancybox-item{
+  height: 250px;
+}
+#content .fancybox-layout1 .fancybox-item{
+  padding: 30px 10;
+}
+#content .fancybox-layout1 .fancybox-item .btn{
+  min-width:140px;
+  height: 38px;
+}
+#content .fancybox-item .fancybox__desc {
+  margin-bottom: 0px;
+  height: 128px;
+}
+.order-item{
+  height: 800px !important;
+}
+.pagination .fa-angle-right {
+  padding-top: 8px;
+}
+.contact-layout1 .contact-panel__info, .contact-layout2 .contact-panel__info {
+  max-width: 97%;
+}
+.display-4{
+  font-size: 37px;
+}
+.login-page .header{
+  height: 100%;
+}
+.login-page, .login-page .overlay {
+  height: auto;
+  overflow-y: scroll;
+}
+.login-page #v-pills-tabContent .form-control.signin{
+  margin-left: 60%;
+}
+#v-pills-profile,
+#v-pills-messages{
+  padding: 15px !important;
+}
+.fancybox-layout1 .fancybox-item.profile{
+  height:auto !important;
+}
+.sidebar-box{
+  margin-bottom: 30px;
+}
+}
+/*////////iphone 6+,7+,8+*/
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+ 
+.header .navbar-brand img {
+    max-width: 158px;
+}
+.heading-layout2 .heading__title {
+  font-size: 24px;
+}
+.about-layout1 .about__Text, .about-layout4 .about__Text {
+  padding: 0 15px;
+}
+.about-layout1 .about__Text p:first-of-type:before, .about-layout4 .about__Text p:first-of-type:before{
+  left: -13px;
+}
+.work-process .btn-downloads {
+  width: 64%;
+}
+.work-process .download-btn {
+  margin: 7px 7px;
+}
+.page-title .pagetitle__heading {
+  font-size: 26px !important;
+}
+.feature-item .feature__content{
+  height: 125px;
+}
+#msform fieldset{
+  width: 100%;
+  margin: 0;
+}
+.product__info .product__price a{
+  min-width: 170px;
+  font-size: 16px;
+}
+}
+/*////////iphone x*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+.slider .slide__title {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+.heading-layout2 .heading__title {
+  font-size: 22px;
+}
+.about-layout1 .about__Text, .about-layout4 .about__Text {
+  padding: 0 10px;
+}
+.about-layout1 .about__Text p:first-of-type:before, .about-layout4 .about__Text p:first-of-type:before{
+  left: -13px;
+}
+.work-process .btn-downloads {
+  width: 64%;
+}
+.work-process .download-btn {
+  margin: 7px 7px;
+}
+.work-process .download-btn span{
+  font-size: 16px;
+}
+.work-process .download-btn span.large-text{
+  font-size: 23px;
+}
+.page-title .pagetitle__heading {
+  font-size: 20px !important;
+}
+.feature-item .feature__content{
+  height: 125px;
+}
+.section-title h2 {
+  font-size: 27px;
+
+}
+.contact-layout1 .contact-panel__info, .contact-layout2 .contact-panel__info{
+  max-width: 100%;
+  margin-left: 0;
+}
+.display-4{
+  font-size: 26px;
+}
+.login-page .header{
+  height: 100%;
+}
+.login-page, .login-page .overlay {
+  height: auto;
+  overflow-y: scroll;
+}
+.login-page #v-pills-tabContent .form-control.signin{
+  margin-left: 57%;
+}
+#v-pills-profile,
+#v-pills-messages{
+  padding: 15px !important;
+}
+
+}
+/*// Galaxy */
+@media only screen and (min-device-width: 360px) and (max-device-width: 374px) {
+.slider .slide__title {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+.heading-layout2 .heading__title {
+  font-size: 22px;
+}
+.about-layout1 .about__Text, .about-layout4 .about__Text {
+  padding: 0 10px;
+}
+.about-layout1 .about__Text p:first-of-type:before, .about-layout4 .about__Text p:first-of-type:before{
+  left: -13px;
+}
+.work-process .btn-downloads {
+  width: 64%;
+}
+.work-process .download-btn {
+  margin: 7px 7px;
+}
+.work-process .download-btn span{
+  font-size: 16px;
+}
+.work-process .download-btn span.large-text{
+  font-size: 23px;
+}
+.work-process .cta .cta__title{
+  font-size: 22px;
+}
+.header .navbar-brand img {
+  max-width: 160px;
+}
+.page-title .pagetitle__heading {
+  font-size: 20px !important;
+}
+.feature-item .feature__content{
+  height: 125px;
+}
+.section-title h2 {
+  font-size: 27px;
+}
+.contact-layout1 .contact-panel__info, .contact-layout2 .contact-panel__info{
+  max-width: 100%;
+  margin-left: 0;
+}
+.display-4{
+  font-size: 26px;
+}
+.login-page .header{
+  height: 100%;
+}
+.login-page, .login-page .overlay {
+  height: auto;
+  overflow-y: scroll;
+}
+.login-page #v-pills-tabContent .form-control.signin{
+  margin-left: 57%;
+}
+#v-pills-profile,
+#v-pills-messages{
+  padding: 15px !important;
+}
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
+.slider .slide__title {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+.heading-layout2 .heading__title {
+  font-size: 20px;
+}
+.about-layout1 .about__Text, .about-layout4 .about__Text {
+  padding: 0 10px;
+}
+.about-layout1 .about__Text p:first-of-type:before, .about-layout4 .about__Text p:first-of-type:before{
+  left: -13px;
+}
+.work-process .btn-downloads {
+  width: 100%;
+  margin: 0px 39px;
+}
+.work-process .download-btn {
+  margin: 7px 7px;
+}
+.work-process .download-btn span{
+  font-size: 16px;
+}
+.work-process .download-btn span.large-text{
+  font-size: 23px;
+}
+.work-process .cta .cta__title{
+  font-size: 21px;
+}
+.page-title .pagetitle__heading {
+  font-size: 20px !important;
+}
+.feature-item .feature__content{
+  height: 125px;
+}
+.section-title h2 {
+  font-size: 24px;
+}
+#msform fieldset{
+  width: 100%;
+  margin: 0;
+}
+.contact-layout1 .contact-panel__info .contact-panel__title,
+ .contact-layout2 .contact-panel__info .contact-panel__title {
+  font-size: 26px;
+}
+.contact-layout1 .contact-panel__info, .contact-layout2 .contact-panel__info{
+  max-width: 100%;
+  margin-left: 0;
+}
+.display-4{
+  font-size: 23px;
+}
+.login-page .header{
+  height: 100%;
+}
+.login-page, .login-page .overlay {
+  height: auto;
+  overflow-y: scroll;
+}
+.login-page #v-pills-tabContent .form-control.signin{
+  margin-left: 48%;
+}
+#v-pills-profile,
+#v-pills-messages{
+  padding: 8px !important;
+}
+}

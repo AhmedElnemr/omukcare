@@ -120,17 +120,7 @@
 						</ul>
 					</li>
 
-					<li aria-haspopup="true">
-						<a href="#" class="">
-							<i class="feather feather-codepen hor-icon"></i>
-							شركائنا
-							<i class="fa fa-angle-down horizontal-icon"></i>
-						</a>
-						<ul class="sub-menu">
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-partners" ?>">عرض</a></li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-partners/add" ?>">اضافة</a></li>
-						</ul>
-					</li>
+
 
 					<li aria-haspopup="true">
 						<a href="#" class="">
@@ -144,17 +134,7 @@
 						</ul>
 					</li>
 
-					<li aria-haspopup="true">
-						<a href="#" class="">
-							<i class="feather feather-codepen hor-icon"></i>
-							Distributors
-							<i class="fa fa-angle-down horizontal-icon"></i>
-						</a>
-						<ul class="sub-menu">
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-supplier" ?>">عرض</a></li>
-							<li aria-haspopup="true"><a href="<?= base_url() . "admin-supplier/add" ?>">اضافة</a></li>
-						</ul>
-					</li>
+
                     <li aria-haspopup="true">
 						<a href="#" class="">
 							<i class="feather feather-codepen hor-icon"></i>
@@ -166,6 +146,17 @@
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-coupons/add" ?>"> إضافة كوبون </a></li>
 							<li aria-haspopup="true"><a href="<?= base_url() . "admin-coupons/user_coupons" ?>"> الكوبونات المستخدمة </a></li>
 
+						</ul>
+					</li>
+
+					<li aria-haspopup="true">
+						<a href="#" class="">
+							<i class="feather feather-codepen hor-icon"></i>
+							المنتجات
+							<i class="fa fa-angle-down horizontal-icon"></i>
+						</a>
+						<ul class="sub-menu">
+							<li aria-haspopup="true"><a href="<?= base_url() . "app-sub-dep/add" ?>"> الاقسام </a></li>
 						</ul>
 					</li>
 

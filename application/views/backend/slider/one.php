@@ -12,44 +12,34 @@ endif ?>
 	<div class="card-body">
 		<?= form_open_multipart($form); ?>
 		<div class="row form-group">
-			<div class="col-lg-4">
+			<div class="col-lg-6">
 				<label>العنوان (ar):</label>
 				<input type="text" name="Pdata[ar][title]" value="<?= $out["ar"]["title"] ?>"
 					   class="form-control m-input"
 					   data-validation="required">
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-6">
 				<label>العنوان (en):</label>
 				<input type="text" name="Pdata[en][title]" value="<?= $out["en"]["title"] ?>"
 					   class="form-control m-input"
 					   data-validation="required">
 			</div>
-			<div class="col-lg-4">
-				<label>العنوان (es):</label>
-				<input type="text" name="Pdata[es][title]" value="<?= $out["es"]["title"] ?>"
-					   class="form-control m-input"
-					   data-validation="required">
-			</div>
+
 		</div>
 		<div class="row form-group">
-			<div class="col-lg-4">
+			<div class="col-lg-6">
 				<label>التفاصيل (ar):</label>
 				<textarea name="Pdata[ar][content]" class="form-control" rows="5" data-validation="required">
 							<?= $out["ar"]["content"] ?>
 						</textarea>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-6">
 				<label>التفاصيل (en):</label>
 				<textarea name="Pdata[en][content]" class="form-control" rows="5" data-validation="required">
 							<?= $out["en"]["content"] ?>
 						</textarea>
 			</div>
-			<div class="col-lg-4">
-				<label>التفاصيل (es):</label>
-				<textarea name="Pdata[es][content]" class="form-control" rows="5" data-validation="required">
-							<?= $out["es"]["content"] ?>
-						</textarea>
-			</div>
+
 		</div>
 		<?php if ($_SESSION["is_developer"] == 1): ?>
 			<div class="form-group m-form__group row">

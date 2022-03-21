@@ -102,9 +102,9 @@ switch($_SERVER["HTTP_HOST"]){
 		$active_group = 'default';
 		$query_builder = TRUE;
 		$db['default'] = array(
-			'dsn'	=> 'mysql:host=localhost;dbname=dayst981_daystar',
+			'dsn'	=> 'mysql:host=localhost;dbname=omukc384_db',
 			'hostname' => 'localhost',
-			'username' => 'dayst981_db',
+			'username' => 'omukc384_user',
 			'password' => 'developer@DB0707',
 			'database' => '',
 			'dbdriver' => 'pdo',
